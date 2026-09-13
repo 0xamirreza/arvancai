@@ -28,24 +28,52 @@ Any Agent / IDE  ──►  Skill (optional workflows)  +  MCP (tools)
 
 ---
 
-## 1) Install (one line)
+## 1) Install (auto-wires clients)
 
 ```bash
+export ARVANCLOUD_API_KEY="your-machine-user-key"   # optional but recommended
 npm install -g arvancai
 ```
 
-Check:
+On **global** install, `arvancai` automatically:
+
+- merges itself into **Cursor** `~/.cursor/mcp.json` (keeps your other MCP servers)
+- copies the **Agent Skill** to `~/.cursor/skills/arvancai/`
+- wires **Windsurf / Claude Desktop / Codex / OpenCode** when their config directories already exist
+
+Re-run anytime (e.g. after setting the API key):
 
 ```bash
-arvancai --help 2>/dev/null || which arvancai
-# binary path, e.g. /usr/local/bin/arvancai
+export ARVANCLOUD_API_KEY="your-machine-user-key"
+arvancai setup
 ```
 
-The process speaks **MCP over stdio** (JSON-RPC on stdout; logs on stderr). Do not run it as a normal CLI chat — wire it into an MCP client.
+Force every known host path (even if the app is not installed yet):
+
+```bash
+arvancai setup --all
+```
+
+Skip auto-setup during install:
+
+```bash
+ARVANCAI_SKIP_SETUP=1 npm install -g arvancai
+```
+
+Check CLI (this must print help — it must **not** hang):
+
+```bash
+arvancai --help
+which arvancai
+```
+
+Then **reload Cursor** (or reopen MCP settings) so `arvancai` shows up under MCP and Skills.
+
+With no arguments, `arvancai` speaks **MCP over stdio** (for IDEs). Do not use it as a chat CLI.
 
 ---
 
-## 2) Set API key
+## 2) API key & extras
 
 ```bash
 export ARVANCLOUD_API_KEY="your-machine-user-key"
@@ -58,17 +86,13 @@ export ARVANCLOUD_S3_ACCESS_KEY_ID="..."
 export ARVANCLOUD_S3_SECRET_ACCESS_KEY="..."
 ```
 
-See [`.env.example`](.env.example) for all overrides.
+See [`.env.example`](.env.example). If setup ran without a key, configs keep `<MU-KEY>` until you re-run `arvancai setup` with the env set.
 
 ---
 
-## 3) Connect any MCP client
+## 3) Manual MCP (optional)
 
-Use the same pattern everywhere: **command = `arvancai`**, env = `ARVANCLOUD_API_KEY`.
-
-### Cursor
-
-`~/.cursor/mcp.json` (or project `.cursor/mcp.json`):
+Auto-setup is enough for most users. Manual shape (also under [`examples/`](examples/)):
 
 ```json
 {
@@ -83,81 +107,7 @@ Use the same pattern everywhere: **command = `arvancai`**, env = `ARVANCLOUD_API
 }
 ```
 
-Skill (Cursor Agent Skills): copy the packaged `skill/` folder into your skills directory  
-(e.g. `~/.cursor/skills/arvancai/` or project `.cursor/skills/arvancai/`).  
-After global install:
-
-```bash
-npm root -g
-# then: $(npm root -g)/arvancai/skill
-```
-
-### Windsurf
-
-MCP settings (Cascade / MCP servers) — same stdio shape:
-
-```json
-{
-  "mcpServers": {
-    "arvancai": {
-      "command": "arvancai",
-      "env": {
-        "ARVANCLOUD_API_KEY": "<MU-KEY>"
-      }
-    }
-  }
-}
-```
-
-### Claude Desktop
-
-Edit Claude config (`claude_desktop_config.json`):
-
-```json
-{
-  "mcpServers": {
-    "arvancai": {
-      "command": "arvancai",
-      "env": {
-        "ARVANCLOUD_API_KEY": "<MU-KEY>"
-      }
-    }
-  }
-}
-```
-
-### Claude Code / Codex / OpenCode / other MCP hosts
-
-Any host that supports **MCP stdio** servers:
-
-| Field | Value |
-| ----- | ----- |
-| command | `arvancai` (or absolute path from `which arvancai`) |
-| args | _(none)_ |
-| env | `ARVANCLOUD_API_KEY` |
-
-Example configs also live in [`examples/`](examples/) after install:
-
-```bash
-ls "$(npm root -g)/arvancai/examples"
-```
-
-If the host cannot find a global binary (GUI apps on macOS), use the full path:
-
-```bash
-which arvancai
-```
-
-```json
-"command": "/usr/local/bin/arvancai"
-```
-
-Or:
-
-```json
-"command": "npx",
-"args": ["-y", "arvancai"]
-```
+GUI apps that lack your shell `PATH` are fine: `arvancai setup` writes an absolute `node` + `bin/arvancai.js` path.
 
 ---
 
@@ -210,6 +160,10 @@ npm run build
 npm test
 export ARVANCLOUD_API_KEY=...
 npm start
+# wire this checkout into clients:
+ARVANCAI_AUTO_SETUP=1 node scripts/postinstall.mjs
+# or:
+node dist/index.js setup
 ```
 
 ## License

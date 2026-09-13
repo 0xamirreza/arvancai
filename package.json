@@ -1,6 +1,6 @@
 {
   "name": "arvancai",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "description": "ArvanCloud MCP server + Agent Skill (arvancai) — official OpenAPI–backed tools for CDN, IaaS, Storage, Video, Edge, CaaS, AI, and more",
   "type": "module",
   "bin": {
@@ -13,6 +13,7 @@
     "dist",
     "skill",
     "examples",
+    "scripts",
     "README.md",
     "LICENSE",
     "SECURITY.md",
@@ -20,6 +21,7 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json && mkdir -p dist/openapi/allowlists && cp -R src/openapi/allowlists/. dist/openapi/allowlists/ && node -e \"const fs=require('fs'); const p='dist/index.js'; let s=fs.readFileSync(p,'utf8'); if(!s.startsWith('#!')) fs.writeFileSync(p,'#!/usr/bin/env node\\n'+s);\"",
+    "postinstall": "node scripts/postinstall.mjs",
     "prepublishOnly": "npm run build && npm test",
     "prepack": "npm run build",
     "start": "node dist/index.js",
