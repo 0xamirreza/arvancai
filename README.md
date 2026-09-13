@@ -1,11 +1,17 @@
 # arvancai
 
 **ArvanCloud MCP server + Agent Skill** — manage ArvanCloud from any MCP-capable agent/IDE  
-(Cursor, Windsurf, Claude Desktop/Code, Codex, OpenCode, …).
+(Cursor, Windsurf, Claude Desktop/Code, Codex, OpenCode, and more).
+
+[![npm](https://img.shields.io/npm/v/arvancai.svg)](https://www.npmjs.com/package/arvancai)
+[![GitHub](https://img.shields.io/badge/github-0xamirreza%2Farvancai-blue)](https://github.com/0xamirreza/arvancai)
 
 ```bash
 npm install -g arvancai
 ```
+
+**Repository:** https://github.com/0xamirreza/arvancai  
+**npm:** https://www.npmjs.com/package/arvancai
 
 Requires **Node.js ≥ 20** and an ArvanCloud **Machine User** API key:  
 https://docs.arvancloud.ir/en/accounts/iam/machine-user
@@ -52,7 +58,7 @@ export ARVANCLOUD_S3_ACCESS_KEY_ID="..."
 export ARVANCLOUD_S3_SECRET_ACCESS_KEY="..."
 ```
 
-See `.env.example` for all overrides.
+See [`.env.example`](.env.example) for all overrides.
 
 ---
 
@@ -79,7 +85,7 @@ Use the same pattern everywhere: **command = `arvancai`**, env = `ARVANCLOUD_API
 
 Skill (Cursor Agent Skills): copy the packaged `skill/` folder into your skills directory  
 (e.g. `~/.cursor/skills/arvancai/` or project `.cursor/skills/arvancai/`).  
-After global install, find it with:
+After global install:
 
 ```bash
 npm root -g
@@ -130,7 +136,7 @@ Any host that supports **MCP stdio** servers:
 | args | _(none)_ |
 | env | `ARVANCLOUD_API_KEY` |
 
-Example configs also live in `examples/` after install:
+Example configs also live in [`examples/`](examples/) after install:
 
 ```bash
 ls "$(npm root -g)/arvancai/examples"
@@ -166,34 +172,31 @@ MCP alone is enough for tool calling. Skill improves agent behavior where the ho
 
 ---
 
-## Publish checklist (maintainers — از صفر)
-
-بعد از ثبت‌نام در [npmjs.com](https://www.npmjs.com):
+## Publish checklist (maintainers)
 
 ```bash
-# 1) Login
+# 1) Login (2FA / granular token with publish rights)
 npm login
+# or: npm config set //registry.npmjs.org/:_authToken=npm_XXX
 
-# 2) Confirm name is free
-npm view arvancai
-
-# 3) From this repo
-cd arvancloud-mcp   # or your clone
+# 2) From this repo
+git clone https://github.com/0xamirreza/arvancai.git
+cd arvancai
 npm install
 npm run build
 npm test
 
-# 4) Publish (public)
+# 3) Bump version if needed, then publish
+npm version patch   # optional
 npm publish --access public
 
-# 5) Verify
+# 4) Verify
+npm view arvancai
 npm install -g arvancai
 which arvancai
 ```
 
-اگر `npm view arvancai` نسخه‌ای نشان داد و مال تو نیست، نام دیگری انتخاب کن یا از scope استفاده کن: `@youruser/arvancai`.
-
-> `package.json` الان `"name": "arvancai"` است. فیلد `repository` را در صورت نیاز به ریپوی واقعی خودت عوض کن.
+See [PUBLISH.md](PUBLISH.md) for 2FA / token troubleshooting.
 
 ---
 
@@ -213,7 +216,7 @@ Official portal: https://www.arvancloud.ir/fa/dev/api
 | CloudLogs ingest | `write_cloud_logs` |
 | Drive / full Logs mgmt / Accounts / Changelog | No public REST OpenAPI |
 
-Details: `docs/discovery/`, `skill/SKILL.md`.
+Details: [`docs/discovery/`](docs/discovery/), [`skill/SKILL.md`](skill/SKILL.md).
 
 ---
 
@@ -228,6 +231,8 @@ Details: `docs/discovery/`, `skill/SKILL.md`.
 ## Local development
 
 ```bash
+git clone https://github.com/0xamirreza/arvancai.git
+cd arvancai
 npm install
 npm run build
 npm test

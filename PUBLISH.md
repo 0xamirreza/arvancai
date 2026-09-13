@@ -1,75 +1,58 @@
-# Publish arvancai to npm (از صفر)
+# Publish arvancai to npm
 
-## پیش‌نیاز
-- حساب روی https://www.npmjs.com
+## Prerequisites
+
+- npm account (https://www.npmjs.com)
 - Node.js ≥ 20
-- این ریپو با `"name": "arvancai"`
+- This repository: https://github.com/0xamirreza/arvancai
+- Package name in `package.json`: `"arvancai"`
 
-## خطای 403 که دیدی
+## 403 / 2FA
 
-```
-Two-factor authentication or granular access token with bypass 2fa enabled is required to publish packages.
-```
+npm requires **2FA** or a **granular access token** with publish permissions.
 
-npm دیگر بدون **2FA** (یا توکن granular با Bypass 2FA) اجازهٔ publish نمی‌دهد.
+### Option A — interactive OTP
 
-### راه پیشنهادی (ساده — پابلیش دستی)
-
-1. برو: https://www.npmjs.com/settings/0xamirreza/security  
-2. **Enable 2FA** (Authenticator app).
-3. دوباره لاگین کن تا سشن با 2FA باشد:
+1. Enable 2FA (Authenticator app): https://www.npmjs.com/settings/~/security  
+2. Relogin: `npm logout && npm login`  
+3. Publish with OTP:
 
 ```bash
-npm logout
-npm login
-npm whoami
-```
-
-4. پابلیش (اگر OTP خواست وارد کن):
-
-```bash
-cd "/home/arsedighi/Desktop/Dev/ArvanCloud AI/arvancloud-mcp"
 npm publish --access public --otp=123456
 ```
 
-(`123456` را با کد اپ authenticator عوض کن.)
+### Option B — granular token
 
-### راه جایگزین (توکن)
-
-1. https://www.npmjs.com/settings/0xamirreza/tokens → **Generate new token** → **Granular Access Token**
-2. Permissions: Read and write برای packages  
-3. گزینهٔ **Bypass 2FA** را اگر برای publish لازم است فعال کن.
-4. توکن را ست کن:
+1. https://www.npmjs.com/settings/~/tokens → Granular Access Token  
+2. Packages: **Read and write**, scope **All packages** (needed for first publish)  
+3. Enable **Bypass 2FA** if available and required for your account  
+4. Configure and publish:
 
 ```bash
-npm config set //registry.npmjs.org/:_authToken=npm_XXXX
+npm config set //registry.npmjs.org/:_authToken=npm_XXX
+npm whoami
 npm publish --access public
 ```
 
-برای CI بلندمدت: [Trusted Publishing (OIDC)](https://docs.npmjs.com/trusted-publishers/).
+Never commit or paste tokens into chat. Revoke leaked tokens immediately.
 
-## هشدار bin که دیدی
+For CI, prefer [Trusted Publishing (OIDC)](https://docs.npmjs.com/trusted-publishers/).
 
-قبلاً npm `bin` را حذف می‌کرد. الان `bin/arvancai.js` با shebang داخل پکیج است (`npm pack` آن را نشان می‌دهد).
-
-## مراحل کامل
+## Full flow
 
 ```bash
-npm login
-npm whoami
-npm view arvancai          # 404 = آزاد
-
-cd "/home/arsedighi/Desktop/Dev/ArvanCloud AI/arvancloud-mcp"
+git clone https://github.com/0xamirreza/arvancai.git
+cd arvancai
 npm install
 npm run build
 npm test
-npm publish --access public --otp=<CODE>
+npm publish --access public
 
 npm install -g arvancai
 which arvancai
 ```
 
-## بعد از پابلیش
+## After publish — MCP config
 
 ```json
 {
@@ -82,4 +65,4 @@ which arvancai
 }
 ```
 
-جزئیات: `README.md`
+See [README.md](README.md).
