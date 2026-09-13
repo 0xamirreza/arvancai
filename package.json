@@ -1,6 +1,6 @@
 {
   "name": "arvancai",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "ArvanCloud MCP server + Agent Skill (arvancai) — official OpenAPI–backed tools for CDN, IaaS, Storage, Video, Edge, CaaS, AI, and more",
   "type": "module",
   "bin": {

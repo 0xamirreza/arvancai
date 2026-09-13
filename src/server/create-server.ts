@@ -1,3 +1,4 @@
+import { createRequire } from "node:module";
 import { McpServer } from "@modelcontextprotocol/server";
 import { ArvanCloudClient } from "../client/arvancloud-client.js";
 import { loadConfig } from "../client/auth.js";
@@ -24,7 +25,10 @@ import { registerResources } from "../resources/index.js";
 import { registerPrompts } from "../prompts/index.js";
 
 export const SERVER_NAME = "arvancloud-mcp";
-export const SERVER_VERSION = "0.5.0";
+
+const require = createRequire(import.meta.url);
+const pkg = require("../../package.json") as { version?: string };
+export const SERVER_VERSION = pkg.version ?? "0.0.0";
 
 export function createServer(env: NodeJS.ProcessEnv = process.env): McpServer {
   const config = loadConfig(env);
