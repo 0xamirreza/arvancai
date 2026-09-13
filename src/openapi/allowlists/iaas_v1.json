@@ -1,0 +1,552 @@
+{
+  "product": "iaas_v1",
+  "source": "iaas-1.0.json",
+  "title": "Arvancloud IaaS API",
+  "version": "1.0.0",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/dedicated-servers/available-servers"
+    },
+    {
+      "method": "GET",
+      "path": "/dedicated-servers/counts"
+    },
+    {
+      "method": "GET",
+      "path": "/dedicated-servers/server-clusters"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/databases"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/databases/flavors"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/dedicated-servers/allocate"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/dedicated-servers/available-servers"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/dedicated-servers/pricings"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/dedicated-servers/release"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/dedicated-servers/server-clusters"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/dedicated-servers/server-clusters"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/dedicated-servers/server-clusters/:id"
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:region/dedicated-servers/server-clusters/:id"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/dedicated-servers/servers"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/dedicated-servers/servers/:id"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/dedicated-servers/servers/:id/auto-renewal"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/dedicated-servers/servers/:id/change-cluster"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/dedicated-servers/servers/:id/labels"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/dedicated-servers/servers/:id/rename"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/dedicated-servers/servers/:id/renew"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/float-ips"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/float-ips"
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:region/float-ips/:id"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/float-ips/:id/attach"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/float-ips/detach"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/float-ips/ips"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/images"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/images"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/images/:id"
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:region/images/:id"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/images/import"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/images/marketplaces"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/ip-advertising/request"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/ip-advertising/status"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/networks"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/networks/:id"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/networks/:id/attach"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/networks/:id/detach"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/ports"
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:region/ports/:id"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/ports/:id/disable"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/ports/:id/disablePortSecurity"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/ports/:id/enable"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/ports/:id/enablePortSecurity"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/ptr/"
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:region/ptr/:ip"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/quota"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/reports/:id"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/reports/:id/:metric"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/securities"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/securities"
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:region/securities/:id"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/securities/security-rules/:id"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/securities/security-rules/:id"
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:region/securities/security-rules/:id"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/securities/security-rules/cdn"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/server-groups"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/server-groups"
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:region/server-groups/:id"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/servers"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/servers/:id"
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:region/servers/:id"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/servers/:id/actions"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/add-public-ip"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/add-security-group"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/attach-vpc"
+    },
+    {
+      "method": "PUT",
+      "path": "/regions/:region/servers/:id/attachRoot"
+    },
+    {
+      "method": "PUT",
+      "path": "/regions/:region/servers/:id/detachRoot"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/hard-reboot"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/instance-ha/:action"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/power-off"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/power-on"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/reboot"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/rebuild"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/remove-security-group"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/rename"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/rescue"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/reserve-prepaid-package"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/reset-root-password"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/resize"
+    },
+    {
+      "method": "PUT",
+      "path": "/regions/:region/servers/:id/resizeRoot"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/snapshot"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/terminate"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/:id/unrescue"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/servers/:id/vnc"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/servers/delete-reasons"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/servers/discard/:task_id"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/servers/inquiry/:task_id"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/servers/options"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/sizes"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/sizes/:id"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/sizes/:id"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/sizes/:id/disk"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/sizes/by-server/:id"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/snapshots"
+    },
+    {
+      "method": "PUT",
+      "path": "/regions/:region/snapshots/:id"
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:region/snapshots/:id"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/snapshots/:id/images/"
+    },
+    {
+      "method": "PUT",
+      "path": "/regions/:region/snapshots/:id/revert"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/snapshots/:id/volumes/"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/snapshots/servers/:id/"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/snapshots/volumes/:id/"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/ssh-keys"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/ssh-keys"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/ssh-keys/:name"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/ssh-keys/:name"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/subnets"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/subnets"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/subnets/:id"
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:region/subnets/:id"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/tags"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/tags"
+    },
+    {
+      "method": "PUT",
+      "path": "/regions/:region/tags/:id"
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:region/tags/:id"
+    },
+    {
+      "method": "PUT",
+      "path": "/regions/:region/tags/:id/attach"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/tags/:id/detach"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/tags/batch"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/traffic-packages/allocate"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/traffic-packages/available-packages"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/traffic-packages/list"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/volumes"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/volumes"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/volumes/:id"
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:region/volumes/:id"
+    },
+    {
+      "method": "PUT",
+      "path": "/regions/:region/volumes/:id/snapshot"
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:region/volumes/:id/snapshot"
+    },
+    {
+      "method": "PUT",
+      "path": "/regions/:region/volumes/:id/snapshot/revert"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/volumes/attach"
+    },
+    {
+      "method": "PATCH",
+      "path": "/regions/:region/volumes/detach"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/volumes/limits"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/volumes/options"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/volumes/os-volumes"
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:region/volumes/snapshots"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/volumes/snapshots/:id/create-volume"
+    },
+    {
+      "method": "POST",
+      "path": "/regions/:region/volumes/snapshots/:id/os-volume"
+    }
+  ]
+}

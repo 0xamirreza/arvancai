@@ -1,0 +1,1204 @@
+{
+  "product": "caas",
+  "source": "paas-1.25.json",
+  "title": "Arvan CaaS",
+  "version": "1.25",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/configmaps"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/configmaps"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/configmaps"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/configmaps/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/configmaps/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/configmaps/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/configmaps/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/endpoints"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/endpoints"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/endpoints"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/endpoints/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/endpoints/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/endpoints/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/endpoints/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/events"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/events"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/events"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/events/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/events/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/events/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/events/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/limitranges"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/limitranges/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/persistentvolumeclaims"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/persistentvolumeclaims"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/persistentvolumeclaims"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/pods"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/pods"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/pods"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/attach"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/attach"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/binding"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/eviction"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/exec"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/exec"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/log"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/portforward"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/portforward"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/proxy"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/proxy"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/proxy"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/proxy"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/proxy"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/status"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/status"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/pods/{name}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/replicationcontrollers"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/replicationcontrollers"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/replicationcontrollers"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/resourcequotas"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/resourcequotas/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/resourcequotas/{name}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/secrets"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/secrets"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/secrets"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/secrets/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/secrets/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/secrets/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/secrets/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/serviceaccounts"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/serviceaccounts"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/serviceaccounts"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/serviceaccounts/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/serviceaccounts/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/serviceaccounts/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/serviceaccounts/{name}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/serviceaccounts/{name}/token"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/services"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/services"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/services"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}/proxy"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}/proxy"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}/proxy"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}/proxy"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}/proxy"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}/status"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}/status"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/namespaces/{namespace}/services/{name}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/configmaps"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/configmaps/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/endpoints"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/endpoints/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/events"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/events/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/limitranges"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/limitranges/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/persistentvolumeclaims"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/persistentvolumeclaims/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/pods"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/pods/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/replicationcontrollers"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/replicationcontrollers/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/resourcequotas"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/resourcequotas/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/secrets"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/secrets/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/serviceaccounts"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/serviceaccounts/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/services"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watch/namespaces/{namespace}/services/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/namespaces/{namespace}/controllerrevisions"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/namespaces/{namespace}/controllerrevisions/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/namespaces/{namespace}/deployments"
+    },
+    {
+      "method": "POST",
+      "path": "/apis/apps/v1/namespaces/{namespace}/deployments"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/apps/v1/namespaces/{namespace}/deployments"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/namespaces/{namespace}/deployments/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/apps/v1/namespaces/{namespace}/deployments/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/apps/v1/namespaces/{namespace}/deployments/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/apps/v1/namespaces/{namespace}/deployments/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/namespaces/{namespace}/deployments/{name}/scale"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/apps/v1/namespaces/{namespace}/deployments/{name}/scale"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/apps/v1/namespaces/{namespace}/deployments/{name}/scale"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/namespaces/{namespace}/deployments/{name}/status"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/apps/v1/namespaces/{namespace}/deployments/{name}/status"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/apps/v1/namespaces/{namespace}/deployments/{name}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/namespaces/{namespace}/replicasets"
+    },
+    {
+      "method": "POST",
+      "path": "/apis/apps/v1/namespaces/{namespace}/replicasets"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/apps/v1/namespaces/{namespace}/replicasets"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/namespaces/{namespace}/replicasets/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/apps/v1/namespaces/{namespace}/replicasets/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/apps/v1/namespaces/{namespace}/replicasets/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/apps/v1/namespaces/{namespace}/replicasets/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/namespaces/{namespace}/replicasets/{name}/scale"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/apps/v1/namespaces/{namespace}/replicasets/{name}/scale"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/apps/v1/namespaces/{namespace}/replicasets/{name}/scale"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/namespaces/{namespace}/replicasets/{name}/status"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/apps/v1/namespaces/{namespace}/replicasets/{name}/status"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/apps/v1/namespaces/{namespace}/replicasets/{name}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/namespaces/{namespace}/statefulsets"
+    },
+    {
+      "method": "POST",
+      "path": "/apis/apps/v1/namespaces/{namespace}/statefulsets"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/apps/v1/namespaces/{namespace}/statefulsets"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/namespaces/{namespace}/statefulsets/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/apps/v1/namespaces/{namespace}/statefulsets/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/apps/v1/namespaces/{namespace}/statefulsets/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/apps/v1/namespaces/{namespace}/statefulsets/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/namespaces/{namespace}/statefulsets/{name}/scale"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/apps/v1/namespaces/{namespace}/statefulsets/{name}/scale"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/apps/v1/namespaces/{namespace}/statefulsets/{name}/scale"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/namespaces/{namespace}/statefulsets/{name}/status"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/apps/v1/namespaces/{namespace}/statefulsets/{name}/status"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/apps/v1/namespaces/{namespace}/statefulsets/{name}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/watch/namespaces/{namespace}/controllerrevisions"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/watch/namespaces/{namespace}/controllerrevisions/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/watch/namespaces/{namespace}/deployments"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/watch/namespaces/{namespace}/deployments/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/watch/namespaces/{namespace}/replicasets"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/watch/namespaces/{namespace}/replicasets/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/watch/namespaces/{namespace}/statefulsets"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps/v1/watch/namespaces/{namespace}/statefulsets/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v1/namespaces/{namespace}/horizontalpodautoscalers"
+    },
+    {
+      "method": "POST",
+      "path": "/apis/autoscaling/v1/namespaces/{namespace}/horizontalpodautoscalers"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/autoscaling/v1/namespaces/{namespace}/horizontalpodautoscalers"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v1/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/autoscaling/v1/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/autoscaling/v1/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/autoscaling/v1/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v1/namespaces/{namespace}/horizontalpodautoscalers/{name}/status"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/autoscaling/v1/namespaces/{namespace}/horizontalpodautoscalers/{name}/status"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/autoscaling/v1/namespaces/{namespace}/horizontalpodautoscalers/{name}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v1/watch/namespaces/{namespace}/horizontalpodautoscalers"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v1/watch/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v2/namespaces/{namespace}/horizontalpodautoscalers"
+    },
+    {
+      "method": "POST",
+      "path": "/apis/autoscaling/v2/namespaces/{namespace}/horizontalpodautoscalers"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/autoscaling/v2/namespaces/{namespace}/horizontalpodautoscalers"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v2/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/autoscaling/v2/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/autoscaling/v2/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/autoscaling/v2/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v2/namespaces/{namespace}/horizontalpodautoscalers/{name}/status"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/autoscaling/v2/namespaces/{namespace}/horizontalpodautoscalers/{name}/status"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/autoscaling/v2/namespaces/{namespace}/horizontalpodautoscalers/{name}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v2/watch/namespaces/{namespace}/horizontalpodautoscalers"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v2/watch/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v2beta2/namespaces/{namespace}/horizontalpodautoscalers"
+    },
+    {
+      "method": "POST",
+      "path": "/apis/autoscaling/v2beta2/namespaces/{namespace}/horizontalpodautoscalers"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/autoscaling/v2beta2/namespaces/{namespace}/horizontalpodautoscalers"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v2beta2/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/autoscaling/v2beta2/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/autoscaling/v2beta2/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/autoscaling/v2beta2/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v2beta2/namespaces/{namespace}/horizontalpodautoscalers/{name}/status"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/autoscaling/v2beta2/namespaces/{namespace}/horizontalpodautoscalers/{name}/status"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/autoscaling/v2beta2/namespaces/{namespace}/horizontalpodautoscalers/{name}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v2beta2/watch/namespaces/{namespace}/horizontalpodautoscalers"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/autoscaling/v2beta2/watch/namespaces/{namespace}/horizontalpodautoscalers/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/batch/v1/namespaces/{namespace}/cronjobs"
+    },
+    {
+      "method": "POST",
+      "path": "/apis/batch/v1/namespaces/{namespace}/cronjobs"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/batch/v1/namespaces/{namespace}/cronjobs"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/batch/v1/namespaces/{namespace}/cronjobs/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/batch/v1/namespaces/{namespace}/cronjobs/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/batch/v1/namespaces/{namespace}/cronjobs/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/batch/v1/namespaces/{namespace}/cronjobs/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/batch/v1/namespaces/{namespace}/cronjobs/{name}/status"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/batch/v1/namespaces/{namespace}/cronjobs/{name}/status"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/batch/v1/namespaces/{namespace}/cronjobs/{name}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/batch/v1/namespaces/{namespace}/jobs"
+    },
+    {
+      "method": "POST",
+      "path": "/apis/batch/v1/namespaces/{namespace}/jobs"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/batch/v1/namespaces/{namespace}/jobs"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/batch/v1/namespaces/{namespace}/jobs/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/batch/v1/namespaces/{namespace}/jobs/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/batch/v1/namespaces/{namespace}/jobs/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/batch/v1/namespaces/{namespace}/jobs/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/batch/v1/namespaces/{namespace}/jobs/{name}/status"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/batch/v1/namespaces/{namespace}/jobs/{name}/status"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/batch/v1/namespaces/{namespace}/jobs/{name}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/batch/v1/watch/namespaces/{namespace}/cronjobs"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/batch/v1/watch/namespaces/{namespace}/cronjobs/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/batch/v1/watch/namespaces/{namespace}/jobs"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/batch/v1/watch/namespaces/{namespace}/jobs/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/coordination.k8s.io/v1/namespaces/{namespace}/leases"
+    },
+    {
+      "method": "POST",
+      "path": "/apis/coordination.k8s.io/v1/namespaces/{namespace}/leases"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/coordination.k8s.io/v1/namespaces/{namespace}/leases"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/coordination.k8s.io/v1/namespaces/{namespace}/leases/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/coordination.k8s.io/v1/namespaces/{namespace}/leases/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/coordination.k8s.io/v1/namespaces/{namespace}/leases/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/coordination.k8s.io/v1/namespaces/{namespace}/leases/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/coordination.k8s.io/v1/watch/namespaces/{namespace}/leases"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/coordination.k8s.io/v1/watch/namespaces/{namespace}/leases/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/discovery.k8s.io/v1/namespaces/{namespace}/endpointslices"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/discovery.k8s.io/v1/namespaces/{namespace}/endpointslices/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/discovery.k8s.io/v1/watch/namespaces/{namespace}/endpointslices"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/discovery.k8s.io/v1/watch/namespaces/{namespace}/endpointslices/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/events.k8s.io/v1/namespaces/{namespace}/events"
+    },
+    {
+      "method": "POST",
+      "path": "/apis/events.k8s.io/v1/namespaces/{namespace}/events"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/events.k8s.io/v1/namespaces/{namespace}/events"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/events.k8s.io/v1/namespaces/{namespace}/events/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/events.k8s.io/v1/namespaces/{namespace}/events/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/events.k8s.io/v1/namespaces/{namespace}/events/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/events.k8s.io/v1/namespaces/{namespace}/events/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/events.k8s.io/v1/watch/namespaces/{namespace}/events"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/events.k8s.io/v1/watch/namespaces/{namespace}/events/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses"
+    },
+    {
+      "method": "POST",
+      "path": "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses/{name}/status"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses/{name}/status"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/networking.k8s.io/v1/namespaces/{namespace}/ingresses/{name}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/networking.k8s.io/v1/watch/namespaces/{namespace}/ingresses"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/networking.k8s.io/v1/watch/namespaces/{namespace}/ingresses/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings"
+    },
+    {
+      "method": "POST",
+      "path": "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles"
+    },
+    {
+      "method": "POST",
+      "path": "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles/{name}"
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles/{name}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles/{name}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/rbac.authorization.k8s.io/v1/watch/namespaces/{namespace}/rolebindings"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/rbac.authorization.k8s.io/v1/watch/namespaces/{namespace}/rolebindings/{name}"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/rbac.authorization.k8s.io/v1/watch/namespaces/{namespace}/roles"
+    },
+    {
+      "method": "GET",
+      "path": "/apis/rbac.authorization.k8s.io/v1/watch/namespaces/{namespace}/roles/{name}"
+    }
+  ]
+}

@@ -1,0 +1,373 @@
+[
+  {
+    "page": "cdn/acceleration/index.html",
+    "method": "PATCH",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/acceleration",
+    "path": "/cdn/4.0/domains/{domain}/acceleration",
+    "body": "{\"status\":\"on\",\"extensions\":[\"css\"]}"
+  },
+  {
+    "page": "cdn/acceleration/index.html",
+    "method": "PATCH",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/image-resize",
+    "path": "/cdn/4.0/domains/{domain}/image-resize",
+    "body": "{\"status\":\"on\"}"
+  },
+  {
+    "page": "cdn/advanced-settings/index.html",
+    "method": "PATCH",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/arian.run/load-balancers/settings",
+    "path": "/cdn/4.0/domains/{domain}/load-balancers/settings",
+    "body": "{\"method\":\"cluster_chash\",\"next_upstream_tcp\":\"on\",\"protocol\":\"https\",\"keepalive\":\"on\",\"max_fails\":5,\"fail_timeout\":\"10s\"}"
+  },
+  {
+    "page": "cdn/analytics/logging/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/log-forwarders",
+    "path": "/cdn/4.0/domains/{domain}/log-forwarders",
+    "body": "{\"name\":\"API Log\",\"description\":\"\",\"type\":\"access\",\"connection_type\":\"arvan_s3\",\"data_format\":{\"method\":true,\"scheme\":true,\"domain\":true,\"referer\":true,\"ip\":true,\"ua\":true,\"country\":true,\"asn\":true,\"content_type\":true,\"status\":true,\"server_port\":true,\"bytes_sent\":true,\"bytes_received\":true,\"upstream_time\":true,\"cache\":true,\"request_id\":true,\"uri\":true,\"query_string\":true},\"settings\":{\"sample_rate\":\"100\",\"s3_endpoint\":\"https://s3.ir-thr-at1.arvanstorage.ir\",\"access_key\":\"Arvan_Access_KEY\",\"secret_key\":\"Arvan_Secret_KEY\",\"bucket_name\":\"exampleBucket\",\"object_size\":\"100000\",\"flush_interval\":\"60\"},\"status\":true}"
+  },
+  {
+    "page": "cdn/analytics/metric-exporter/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/[domain]/metric-exporters",
+    "path": "/cdn/4.0/domains/{domain}/metric-exporters",
+    "body": null
+  },
+  {
+    "page": "cdn/analytics/metric-exporter/index.html",
+    "method": "GET",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/metric-exporters",
+    "path": "/cdn/4.0/metric-exporters",
+    "body": null
+  },
+  {
+    "page": "cdn/analytics/metric-exporter/index.html",
+    "method": "GET",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/[domain]/metric-exporters/[metricExporterId]",
+    "path": "/cdn/4.0/domains/{domain}/metric-exporters/{metricExporterId}",
+    "body": null
+  },
+  {
+    "page": "cdn/analytics/metric-exporter/index.html",
+    "method": "GET",
+    "url": "https://napi.arvancloud.ir/cdn-metrics/v1/metrics/arvancloud.ir/id/[endPointId]",
+    "path": "/cdn-metrics/v1/metrics/arvancloud.ir/id/{endPointId}",
+    "body": null
+  },
+  {
+    "page": "cdn/analytics/metric-exporter/index.html",
+    "method": "GET",
+    "url": "https://napi.arvancloud.ir/cdn-metrics/v1/metrics/",
+    "path": "/cdn-metrics/v1/metrics/",
+    "body": null
+  },
+  {
+    "page": "cdn/analytics/metric-exporter/index.html",
+    "method": "PUT",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/[domain]/metric-exporters/[metricExporterId]",
+    "path": "/cdn/4.0/domains/{domain}/metric-exporters/{metricExporterId}",
+    "body": null
+  },
+  {
+    "page": "cdn/analytics/metric-exporter/index.html",
+    "method": "DELETE",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/[domain]/metric-exporters/[metricExporterId]",
+    "path": "/cdn/4.0/domains/{domain}/metric-exporters/{metricExporterId}",
+    "body": null
+  },
+  {
+    "page": "cdn/caching/index.html",
+    "method": "PATCH",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/caching",
+    "path": "/cdn/4.0/domains/{domain}/caching",
+    "body": "{\"cache_status\":\"off\"}"
+  },
+  {
+    "page": "cdn/caching/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/caching/purge",
+    "path": "/cdn/4.0/domains/{domain}/caching/purge",
+    "body": "{\"purge\":\"individual\",\"purge_urls\":[\"http://example.com/purge\"]}"
+  },
+  {
+    "page": "cdn/cname-access/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/host-header-whitelists",
+    "path": "/cdn/4.0/domains/{domain}/host-header-whitelists",
+    "body": null
+  },
+  {
+    "page": "cdn/cname-access/index.html",
+    "method": "PUT",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/host-header-whitelists/settings",
+    "path": "/cdn/4.0/domains/{domain}/host-header-whitelists/settings",
+    "body": null
+  },
+  {
+    "page": "cdn/custom-pages/index.html",
+    "method": "GET",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/custom-pages",
+    "path": "/cdn/4.0/domains/{domain}/custom-pages",
+    "body": null
+  },
+  {
+    "page": "cdn/dns-records/adding-records/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/dns-records",
+    "path": "/cdn/4.0/domains/{domain}/dns-records",
+    "body": "{\"type\":\"A\",\"name\":\"test\",\"cloud\":false,\"value\":[{\"country\":\"\",\"ip\":\"8.8.8.8\",\"port\":null,\"weight\":null}],\"upstream_https\":\"default\",\"ip_filter_mode\":{\"count\":\"single\",\"geo_filter\":\"none\",\"order\":\"none\"},\"ttl\":120}"
+  },
+  {
+    "page": "cdn/dns-records/change-default-ns/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ns-keys/use-optional-keys",
+    "path": "/cdn/4.0/domains/{domain}/ns-keys/use-optional-keys",
+    "body": null
+  },
+  {
+    "page": "cdn/dns-records/change-default-ns/index.html",
+    "method": "PUT",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ns-keys",
+    "path": "/cdn/4.0/domains/{domain}/ns-keys",
+    "body": "{\"ns_keys\":[\"ns1.example.com\",\"ns2.example.com\"]}"
+  },
+  {
+    "page": "cdn/dns-records/cloud/index.html",
+    "method": "PUT",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/dns-records/Record_ID/cloud",
+    "path": "/cdn/4.0/domains/{domain}/dns-records/{id}/cloud",
+    "body": "{\"cloud\":true}"
+  },
+  {
+    "page": "cdn/dns-records/dnssec/index.html",
+    "method": "PUT",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/dns-records/dnssec/actions",
+    "path": "/cdn/4.0/domains/{domain}/dns-records/dnssec/actions",
+    "body": "{\"enable\":true}"
+  },
+  {
+    "page": "cdn/dns-records/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/dns-records/import",
+    "path": "/cdn/4.0/domains/{domain}/dns-records/import",
+    "body": null
+  },
+  {
+    "page": "cdn/domain/cname-setup/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/cname-setup/convert",
+    "path": "/cdn/4.0/domains/{domain}/cname-setup/convert",
+    "body": null
+  },
+  {
+    "page": "cdn/domain/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/dns-service",
+    "path": "/cdn/4.0/domains/{domain}",
+    "body": "{\"domain\":\"arvandocs.ir\",\"domain_type\":\"full\"}"
+  },
+  {
+    "page": "cdn/domain/index.html",
+    "method": "PUT",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/arvandocs.com/plan",
+    "path": "/cdn/4.0/domains/{domain}/plan",
+    "body": "{\"plan_level\":\"2\"}"
+  },
+  {
+    "page": "cdn/domain/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/arvantest.ir/clone",
+    "path": "/cdn/4.0/domains/{domain}/clone",
+    "body": "{ \"from\": \"string\"}"
+  },
+  {
+    "page": "cdn/domain/transfer/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/transfer",
+    "path": "/cdn/4.0/domains/{domain}/transfer",
+    "body": "{\"account_id\":\"Destination_Account_ID\"}"
+  },
+  {
+    "page": "cdn/domain/transfer/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/transfer/change-status",
+    "path": "/cdn/4.0/domains/{domain}/change-status",
+    "body": "{\"domain\":\"example.com\",\"status\":\"accept\"}"
+  },
+  {
+    "page": "cdn/https-settings/index.html",
+    "method": "PATCH",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl",
+    "path": "/cdn/4.0/domains/{domain}/ssl",
+    "body": "{\"ssl_status\":true}"
+  },
+  {
+    "page": "cdn/https-settings/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/yourdomain.com/ssl/certificates",
+    "path": "/cdn/4.0/domains/{domain}/ssl/certificates",
+    "body": null
+  },
+  {
+    "page": "cdn/list/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/dynamic-fields",
+    "path": "/cdn/4.0/dynamic-fields",
+    "body": null
+  },
+  {
+    "page": "cdn/security/ddos/index.html",
+    "method": "PATCH",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ddos",
+    "path": "/cdn/4.0/domains/{domain}/ddos",
+    "body": "{\"protection_mode\":\"cookie\"}"
+  },
+  {
+    "page": "cdn/security/firewall/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/firewall/rules",
+    "path": "/cdn/4.0/domains/{domain}/firewall/rules",
+    "body": "{\"name\":\"Test Rule\",\"note\":\"\",\"is_enabled\":true,\"action\":\"allow\",\"action_details\":{\"mode\":1,\"ttl\":120,\"https_only\":false},\"filter_expr\":\"((http.host == \\\"example.com\\\"))\"}"
+  },
+  {
+    "page": "cdn/security/known-bots/index.html",
+    "method": "PATCH",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/firewall/settings",
+    "path": "/cdn/4.0/domains/{domain}/firewall/settings",
+    "body": "{\"skip_global_firewall\":true}"
+  },
+  {
+    "page": "cdn/security/rate-limit/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/rate-limit/rules",
+    "path": "/cdn/4.0/domains/{domain}/rate-limit/rules",
+    "body": "{\"is_enabled\":true,\"url_pattern\":\"example.com/**\",\"description\":\"\",\"exclude_sources\":[],\"rate\":1,\"burst\":4000000,\"block_duration\":0,\"time_duration\":10,\"allowed_methods\":[],\"action\":\"challenge\",\"action_details\":{\"mode\":1,\"ttl\":120,\"https_only\":false}}"
+  },
+  {
+    "page": "cdn/security/waf/index.html",
+    "method": "PATCH",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/waf",
+    "path": "/cdn/4.0/domains/{domain}/waf",
+    "body": "{\"mode\":\"off\"}"
+  },
+  {
+    "page": "cdn/security/waf/index.html",
+    "method": "PATCH",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/waf/packages/default?revelio",
+    "path": "/cdn/4.0/domains/{domain}/waf/packages/default?revelio",
+    "body": "{\"disabled_rules\":[\"21001\",\"21003\",\"21006\",\"21009\",\"40026\",\"99001\",\"21002\"]}"
+  },
+  {
+    "page": "cdn/security/waf/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/waf/rules",
+    "path": "/cdn/4.0/domains/{domain}/waf/rules",
+    "body": "{\"id\":null,\"url_pattern\":\"example.com/**\",\"sources\":[\"192.168.1.1/32\"],\"description\":\"Test For Docs\",\"action\":\"protect\"}"
+  },
+  {
+    "page": "developer-tools/api/api-usage/index.html",
+    "method": "GET",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains",
+    "path": "/cdn/4.0/domains",
+    "body": null
+  },
+  {
+    "page": "developer-tools/api/api-usage/index.html",
+    "method": "GET",
+    "url": "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/dns-records",
+    "path": "/cdn/4.0/domains/{domain}/dns-records",
+    "body": null
+  },
+  {
+    "page": "developer-tools/api/api-usage/index.html",
+    "method": "GET",
+    "url": "https://napi.arvancloud.ir/ecc/v1/regions/ir-thr-c2/servers",
+    "path": "/ecc/v1/regions/{region}/servers",
+    "body": null
+  },
+  {
+    "page": "developer-tools/api/api-usage/index.html",
+    "method": "GET",
+    "url": "https://napi.arvancloud.ir/ecc/v1/regions/ir-thr-c2/images",
+    "path": "/ecc/v1/regions/{region}/images",
+    "body": null
+  },
+  {
+    "page": "developer-tools/api/api-usage/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/ecc/v1/regions/nl-ams-su1/servers",
+    "path": "/ecc/v1/regions/{region}/servers",
+    "body": null
+  },
+  {
+    "page": "developer-tools/api/api-usage/index.html",
+    "method": "GET",
+    "url": "https://napi.arvancloud.ir/vod/2.0/channels",
+    "path": "/vod/2.0/channels",
+    "body": null
+  },
+  {
+    "page": "developer-tools/api/api-usage/index.html",
+    "method": "GET",
+    "url": "https://napi.arvancloud.ir/vod/2.0/channels/{channel-id}/videos",
+    "path": "/vod/2.0/channels/{channel-id}/videos",
+    "body": null
+  },
+  {
+    "page": "developer-tools/api/api-usage/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/vod/2.0/channels",
+    "path": "/vod/2.0/channels",
+    "body": null
+  },
+  {
+    "page": "developer-tools/api/api-usage/index.html",
+    "method": "GET",
+    "url": "https://s3.ir-thr-at1.arvanstorage.ir/$file",
+    "path": "https://s3.ir-thr-at1.arvanstorage.ir/$file",
+    "body": null
+  },
+  {
+    "page": "developer-tools/api/api-usage/index.html",
+    "method": "GET",
+    "url": "https://$bucket.s3.ir-thr-at1.arvanstorage.ir",
+    "path": "https://$bucket.s3.ir-thr-at1.arvanstorage.ir",
+    "body": null
+  },
+  {
+    "page": "developer-tools/api/api-usage/index.html",
+    "method": "PUT",
+    "url": "https://s3.ir-thr-at1.arvanstorage.ir/",
+    "path": "https://s3.ir-thr-at1.arvanstorage.ir/",
+    "body": null
+  },
+  {
+    "page": "developer-tools/cli/install/index.html",
+    "method": "GET",
+    "url": "https://repo.arvancloud.ir/apt/gpg.key",
+    "path": "https://repo.arvancloud.ir/apt/gpg.key",
+    "body": null
+  },
+  {
+    "page": "edge-computing/trigger/path/index.html",
+    "method": "POST",
+    "url": "https://napi.arvancloud.ir/edge-computing/1.0/edge-computes/{workers.ID}/routes",
+    "path": "/edge-computing/1.0/edge-computes/{workerId}/routes",
+    "body": "{\"domain\":\"myexampledomain.ir.ir\",\"url\":\"/app/*\",\"status\":\"active\"}"
+  },
+  {
+    "page": "edge-computing/trigger/path/index.html",
+    "method": "PUT",
+    "url": "https://napi.arvancloud.ir/edge-computing/1.0/edge-computes/{workers.ID}/routes//{routes.ID}",
+    "path": "/edge-computing/1.0/edge-computes/{workerId}/routes/{routeId}",
+    "body": "{\"url\":\"/app/*\",\"status\":\"inactive\"}"
+  },
+  {
+    "page": "object-storage/metrics/index.html",
+    "method": "GET",
+    "url": "https://storage.arvanapis.ir/v1/buckets/{bucketName}/metrics",
+    "path": "https://storage.arvanapis.ir/v1/buckets/{bucketName}/metrics",
+    "body": null
+  }
+]

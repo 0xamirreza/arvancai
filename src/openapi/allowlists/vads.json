@@ -1,0 +1,124 @@
+{
+  "product": "vads",
+  "source": "vads-2.0.json",
+  "title": "ArvanCloud Video Advertising Service",
+  "version": "2.0",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/campaigns/{campaign}/ads"
+    },
+    {
+      "method": "POST",
+      "path": "/campaigns/{campaign}/ads"
+    },
+    {
+      "method": "GET",
+      "path": "/campaigns/{campaign}/ads/{ad}"
+    },
+    {
+      "method": "PUT",
+      "path": "/campaigns/{campaign}/ads/{ad}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/campaigns/{campaign}/ads/{ad}"
+    },
+    {
+      "method": "GET",
+      "path": "/channels/{channel}/ads"
+    },
+    {
+      "method": "POST",
+      "path": "/channels/{channel}/ads"
+    },
+    {
+      "method": "GET",
+      "path": "/ads/{ad}"
+    },
+    {
+      "method": "PUT",
+      "path": "/ads/{ad}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/ads/{ad}"
+    },
+    {
+      "method": "GET",
+      "path": "/agencies/{agency}/income"
+    },
+    {
+      "method": "GET",
+      "path": "/channels/{channel}/campaigns"
+    },
+    {
+      "method": "POST",
+      "path": "/channels/{channel}/campaigns"
+    },
+    {
+      "method": "GET",
+      "path": "/campaigns/{campaign}"
+    },
+    {
+      "method": "PUT",
+      "path": "/campaigns/{campaign}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/campaigns/{campaign}"
+    },
+    {
+      "method": "GET",
+      "path": "/channels"
+    },
+    {
+      "method": "POST",
+      "path": "/channels"
+    },
+    {
+      "method": "GET",
+      "path": "/channels/{channel}"
+    },
+    {
+      "method": "PUT",
+      "path": "/channels/{channel}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/channels/{channel}"
+    },
+    {
+      "method": "GET",
+      "path": "/ads/{ad}/reports/track/{event}/{period}"
+    },
+    {
+      "method": "GET",
+      "path": "/campaigns/{campaign}/ads/{ad}/reports/track/{event}/{period}"
+    },
+    {
+      "method": "GET",
+      "path": "/campaigns/{campaign}/reports/track/{event}/{period}"
+    },
+    {
+      "method": "GET",
+      "path": "/transactions"
+    },
+    {
+      "method": "POST",
+      "path": "/transactions"
+    },
+    {
+      "method": "GET",
+      "path": "/transactions/{transaction}"
+    },
+    {
+      "method": "GET",
+      "path": "/domain"
+    },
+    {
+      "method": "POST",
+      "path": "/domain"
+    }
+  ]
+}

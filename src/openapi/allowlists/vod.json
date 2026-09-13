@@ -1,0 +1,224 @@
+{
+  "product": "vod",
+  "source": "vod-2.0.json",
+  "title": "Arvan VOD",
+  "version": "2.0",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/analytics/play-count"
+    },
+    {
+      "method": "GET",
+      "path": "/analytics/traffic"
+    },
+    {
+      "method": "GET",
+      "path": "/analytics/watch-time"
+    },
+    {
+      "method": "GET",
+      "path": "/channels/{channel}/audios"
+    },
+    {
+      "method": "POST",
+      "path": "/channels/{channel}/audios"
+    },
+    {
+      "method": "GET",
+      "path": "/audios/{audio}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/audios/{audio}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/audios/{audio}"
+    },
+    {
+      "method": "GET",
+      "path": "/videos/{video}/audio-tracks"
+    },
+    {
+      "method": "POST",
+      "path": "/videos/{video}/audio-tracks"
+    },
+    {
+      "method": "GET",
+      "path": "/audio-tracks/{audio_track}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/audio-tracks/{audio_track}"
+    },
+    {
+      "method": "GET",
+      "path": "/channels"
+    },
+    {
+      "method": "POST",
+      "path": "/channels"
+    },
+    {
+      "method": "GET",
+      "path": "/channels/{channel}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/channels/{channel}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/channels/{channel}"
+    },
+    {
+      "method": "GET",
+      "path": "/channels/{channel}/files"
+    },
+    {
+      "method": "POST",
+      "path": "/channels/{channel}/files"
+    },
+    {
+      "method": "GET",
+      "path": "/files/{file}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/channels/{channel}/files/{file}"
+    },
+    {
+      "method": "DELETE",
+      "path": "files/{file}"
+    },
+    {
+      "method": "GET",
+      "path": "/channels/{channel}/profiles"
+    },
+    {
+      "method": "POST",
+      "path": "/channels/{channel}/profiles"
+    },
+    {
+      "method": "GET",
+      "path": "/profiles/{profile}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/profiles/{profile}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/profiles/{profile}"
+    },
+    {
+      "method": "GET",
+      "path": "/report/geo"
+    },
+    {
+      "method": "GET",
+      "path": "/report/statistics"
+    },
+    {
+      "method": "GET",
+      "path": "/report/traffics"
+    },
+    {
+      "method": "GET",
+      "path": "/report/user-agent"
+    },
+    {
+      "method": "GET",
+      "path": "/report/visitors"
+    },
+    {
+      "method": "GET",
+      "path": "/videos/{video}/subtitles"
+    },
+    {
+      "method": "POST",
+      "path": "/videos/{video}/subtitles"
+    },
+    {
+      "method": "GET",
+      "path": "/subtitles/{subtitle}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/subtitles/{subtitle}"
+    },
+    {
+      "method": "GET",
+      "path": "/videos/{video}/tags"
+    },
+    {
+      "method": "PUT",
+      "path": "/videos/{video}/tags"
+    },
+    {
+      "method": "GET",
+      "path": "/tags"
+    },
+    {
+      "method": "POST",
+      "path": "/tags"
+    },
+    {
+      "method": "GET",
+      "path": "/videos/{video}/thumbnail"
+    },
+    {
+      "method": "POST",
+      "path": "/videos/{video}/thumbnail"
+    },
+    {
+      "method": "GET",
+      "path": "/domain"
+    },
+    {
+      "method": "POST",
+      "path": "/domain"
+    },
+    {
+      "method": "GET",
+      "path": "/channels/{channel}/videos"
+    },
+    {
+      "method": "POST",
+      "path": "/channels/{channel}/videos"
+    },
+    {
+      "method": "GET",
+      "path": "/videos/{video}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/videos/{video}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/videos/{video}"
+    },
+    {
+      "method": "GET",
+      "path": "/channels/{channel}/watermarks"
+    },
+    {
+      "method": "POST",
+      "path": "/channels/{channel}/watermarks"
+    },
+    {
+      "method": "GET",
+      "path": "/watermarks/{watermark}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/watermarks/{watermark}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/watermarks/{watermark}"
+    }
+  ]
+}

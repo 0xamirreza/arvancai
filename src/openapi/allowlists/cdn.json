@@ -1,0 +1,960 @@
+{
+  "product": "cdn",
+  "source": "cdn-4.0.yml",
+  "title": "ArvanCloud CDN Services",
+  "version": "4.181.3",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/domains"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/dns-service"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/lookup"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/order"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}"
+    },
+    {
+      "method": "PUT",
+      "path": "/domains/{domain}/ns-keys"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/ns-keys"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/ns-keys/check"
+    },
+    {
+      "method": "PUT",
+      "path": "/domains/{domain}/dns-service/check-ns"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/ns-keys/use-optional-keys"
+    },
+    {
+      "method": "PUT",
+      "path": "/domains/{domain}/cname-setup/custom"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/cname-setup/custom"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/cname-setup/convert"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/cname-setup/check"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/clone"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/regenerate"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/hold"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/unhold"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/transfer"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/transfer"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/transfer/change-status"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/claims"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/claims"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/claims/{claim_id}"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/claims/{claim_id}/check"
+    },
+    {
+      "method": "GET",
+      "path": "/plans"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/plans"
+    },
+    {
+      "method": "PUT",
+      "path": "/domains/{domain}/plan"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/plan/violations"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/plan/usages"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/dns-records"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/dns-records"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/dns-records/{id}"
+    },
+    {
+      "method": "PUT",
+      "path": "/domains/{domain}/dns-records/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/dns-records/{id}"
+    },
+    {
+      "method": "PUT",
+      "path": "/domains/{domain}/dns-records/{id}/cloud"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/dns-records/import"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/dns-records/export"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/secondary-dns"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/secondary-dns"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/secondary-dns"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/host-header-whitelists"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/host-header-whitelists"
+    },
+    {
+      "method": "PUT",
+      "path": "/domains/{domain}/host-header-whitelists/settings"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/host-header-whitelists/{target_account}"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/dns-records/dnssec"
+    },
+    {
+      "method": "PUT",
+      "path": "/domains/{domain}/dns-records/dnssec/actions"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/caching"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/caching"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/caching"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/caching/purge"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/purge-tags"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/purge-tags"
+    },
+    {
+      "method": "GET",
+      "path": "/load-balancers/regions"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/load-balancers/settings"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/load-balancers/settings"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/load-balancers/regions"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/load-balancers"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/load-balancers"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}/pools"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}/pools"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}/prioritize"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}/pools/{loadBalancerPoolId}"
+    },
+    {
+      "method": "PUT",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}/pools/{loadBalancerPoolId}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}/pools/{loadBalancerPoolId}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}/pools/{loadBalancerPoolId}"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}/pools/{loadBalancerPoolId}/origins"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}/pools/{loadBalancerPoolId}/origins"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}/pools/{loadBalancerPoolId}/origins/{loadBalancerPoolOriginId}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}/pools/{loadBalancerPoolId}/origins/{loadBalancerPoolOriginId}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/load-balancers/{loadBalancerId}/pools/{loadBalancerPoolId}/origins/{loadBalancerPoolOriginId}"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/page-rules"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/page-rules"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/page-rules/{id}"
+    },
+    {
+      "method": "PUT",
+      "path": "/domains/{domain}/page-rules/{id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/page-rules/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/page-rules/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/page-rules/{id}/purge"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/page-rules/{id}/diff"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/page-rules/{id}/diff"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/image-resize"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/image-resize"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/acceleration"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/acceleration"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/custom-pages"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/custom-pages"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/custom-pages/{customPageFile}"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/custom-pages/{customPageFile}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/custom-pages/{customPageFile}"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/settings/www-redirect"
+    },
+    {
+      "method": "PUT",
+      "path": "/domains/{domain}/settings/www-redirect"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/log-forwarders"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/log-forwarders"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/log-forwarders/{logForwarderId}"
+    },
+    {
+      "method": "PUT",
+      "path": "/domains/{domain}/log-forwarders/{logForwarderId}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/log-forwarders/{logForwarderId}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/log-forwarders/{logForwarderId}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/metric-exporters"
+    },
+    {
+      "method": "GET",
+      "path": "/metric-exporters/metrics"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/metric-exporters"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/metric-exporters/{metricExporterId}"
+    },
+    {
+      "method": "PUT",
+      "path": "/domains/{domain}/metric-exporters/{metricExporterId}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/metric-exporters/{metricExporterId}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/metric-exporters/{metricExporterId}/status"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/transport-layer-proxies"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/transport-layer-proxies"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/transport-layer-proxies/{transportLayerProxyId}"
+    },
+    {
+      "method": "PUT",
+      "path": "/domains/{domain}/transport-layer-proxies/{transportLayerProxyId}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/transport-layer-proxies/{transportLayerProxyId}"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/response-transforms"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/response-transforms"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/response-transforms/{responseTransform}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/response-transforms/{responseTransform}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/response-transforms/{responseTransform}"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/troubleshoots"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/troubleshoots"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/troubleshoots/latest"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/traffics"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/traffics/saved"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/traffics/map"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/visitors"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/high-request-ips"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/response-time"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/status"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/status/summary"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/error-logs"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/error-logs/chart"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/error-log-details"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/dns-requests"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/dns-geo"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/attacks"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/attacks/list"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/attacks/attackers"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/attacks/map"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/attacks/uri"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/reports/transport-layer-proxies/{transportLayerProxyId}/traffics"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/reports/download"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/firewall/settings"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/firewall/settings"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/firewall/rules"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/firewall/rules"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/firewall/rules/{id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/firewall/rules/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/firewall/rules/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/firewall/actions/reprioritize"
+    },
+    {
+      "method": "GET",
+      "path": "/account/firewall-rules/domains"
+    },
+    {
+      "method": "GET",
+      "path": "/account/firewall-rules"
+    },
+    {
+      "method": "POST",
+      "path": "/account/firewall-rules"
+    },
+    {
+      "method": "GET",
+      "path": "/account/firewall-rules/{accountFirewallRule}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/account/firewall-rules/{accountFirewallRule}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/account/firewall-rules/{accountFirewallRule}"
+    },
+    {
+      "method": "POST",
+      "path": "/account/firewall-rules/{accountFirewallRule}/domains"
+    },
+    {
+      "method": "DELETE",
+      "path": "/account/firewall-rules/{accountFirewallRule}/domains"
+    },
+    {
+      "method": "POST",
+      "path": "/account/firewall-rules/reprioritize"
+    },
+    {
+      "method": "GET",
+      "path": "/waf"
+    },
+    {
+      "method": "GET",
+      "path": "/waf/packages/{packageId}"
+    },
+    {
+      "method": "GET",
+      "path": "/waf/packages/{packageId}/rules"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/waf/settings"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/waf/settings"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/waf/actions/reconfigure"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/waf/actions/reprioritize"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/waf/actions/reprioritize-package"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/waf/rules"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/waf/rules"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/waf/rules/{id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/waf/rules/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/waf/rules/{id}"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/waf/packages"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/waf/packages"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/waf/packages/{id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/waf/packages/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/waf/packages/{id}"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/ddos/settings"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/ddos/settings"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/ddos/rules"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/ddos/rules"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/ddos/rules/{id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/ddos/rules/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/ddos/rules/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/ddos/actions/reprioritize"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/rate-limit/settings"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/rate-limit/settings"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/rate-limit/rules"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/rate-limit/rules"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/rate-limit/rules/{id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/rate-limit/rules/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/rate-limit/rules/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/rate-limit/actions/reprioritize"
+    },
+    {
+      "method": "GET",
+      "path": "/apps"
+    },
+    {
+      "method": "GET",
+      "path": "/apps/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/apps/{id}"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/apps"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/apps/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/apps/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/apps/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/apps/{id}/actions/trigger_webhook"
+    },
+    {
+      "method": "GET",
+      "path": "/apps/category"
+    },
+    {
+      "method": "GET",
+      "path": "/apps/category/{application-category}"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/ssl"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/ssl"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/ssl/certificates"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/ssl/certificates"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/ssl/certificates/{certificateId}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/ssl/certificates/{certificateId}"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/ssl/certificates/{certificateId}/revoke"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/ssl/orders"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/ssl/issue"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/ssl/orders/action/retry"
+    },
+    {
+      "method": "GET",
+      "path": "/certificate-products"
+    },
+    {
+      "method": "POST",
+      "path": "/certificates/issue"
+    },
+    {
+      "method": "GET",
+      "path": "/certificates/orders"
+    },
+    {
+      "method": "GET",
+      "path": "/certificates/orders/{certificateOrder}"
+    },
+    {
+      "method": "POST",
+      "path": "/certificates/orders/{certificateOrder}/revoke"
+    },
+    {
+      "method": "POST",
+      "path": "/certificates/orders/{certificateOrder}/reissue"
+    },
+    {
+      "method": "POST",
+      "path": "/certificates/orders/{certificateOrder}/install"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/health-checks"
+    },
+    {
+      "method": "POST",
+      "path": "/domains/{domain}/health-checks"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/health-checks/{healthcheck}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/domains/{domain}/health-checks/{healthcheck}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/domains/{domain}/health-checks/{healthcheck}"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/health-checks/zones"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/health-checks/reports/summary"
+    },
+    {
+      "method": "GET",
+      "path": "/domains/{domain}/health-checks/reports/details"
+    },
+    {
+      "method": "GET",
+      "path": "/health-checks/zones"
+    },
+    {
+      "method": "GET",
+      "path": "/dynamic-fields"
+    },
+    {
+      "method": "POST",
+      "path": "/dynamic-fields"
+    },
+    {
+      "method": "GET",
+      "path": "/dynamic-fields/{id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/dynamic-fields/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/dynamic-fields/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/dynamic-fields/{id}/items"
+    },
+    {
+      "method": "DELETE",
+      "path": "/dynamic-fields/{id}/items/{item_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/reports/aggregated/details"
+    },
+    {
+      "method": "GET",
+      "path": "/reports/aggregated/charts"
+    },
+    {
+      "method": "GET",
+      "path": "/reports/aggregated/filters"
+    }
+  ]
+}

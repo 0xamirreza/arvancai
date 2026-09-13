@@ -1,0 +1,240 @@
+{
+  "product": "storage",
+  "source": "storage-1.0.0.yaml",
+  "title": "Object Storage API",
+  "version": "1.0.0",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/v1/access-points"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/access-points"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/access-points/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/access-points/{id}"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/av"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/av"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/av/{id}"
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/av/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/av/{id}/scan"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/av/{id}/scans-summary"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/av/{id}/scans-statistics"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/bucket-downloads"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/bucket-downloads"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/bucket-downloads/{id}"
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/bucket-downloads/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/bucket-downloads/{id}"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/buckets"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/buckets"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/buckets/{bucketName}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/buckets/{bucketName}"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/buckets/{bucketName}/versioning"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/buckets/{bucketName}/versioning"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/buckets/{bucketName}/enable-multi-zone"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/reports/storage"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/reports/traffic"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/reports/usage-rate"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/reports/operations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/replications"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/replications"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/replications/{id}"
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/replications/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/replications/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/replications/{id}/sync"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/replications/{id}/detect-sync-status"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/temp-users"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/temp-users"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/temp-users/{id}"
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/temp-users/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/temp-users/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/users/refresh-credentials"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/upload/link"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/bucket-catalogs"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/bucket-catalogs"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/bucket-catalogs/{id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/v1/bucket-catalogs/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/bucket-catalogs/{id}"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/bucket-catalogs/resources"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/engine-clusters"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/engine-clusters"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/engine-clusters/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/engine-clusters/{id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/v1/engine-clusters/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/engine-clusters/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/engine-clusters/{id}/config/{configId}"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/engine-clusters/{id}/api-key"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/buckets/{bucketName}/lock"
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/buckets/{bucketName}/lock"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/buckets/{bucketName}/metrics"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "arvancai",
+  "version": "0.5.0",
+  "description": "ArvanCloud MCP server + Agent Skill (arvancai) — official OpenAPI–backed tools for CDN, IaaS, Storage, Video, Edge, CaaS, AI, and more",
+  "type": "module",
+  "bin": {
+    "arvancai": "bin/arvancai.js",
+    "arvancloud-mcp": "bin/arvancai.js"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "bin",
+    "dist",
+    "skill",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    ".env.example"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && mkdir -p dist/openapi/allowlists && cp -R src/openapi/allowlists/. dist/openapi/allowlists/ && node -e \"const fs=require('fs'); const p='dist/index.js'; let s=fs.readFileSync(p,'utf8'); if(!s.startsWith('#!')) fs.writeFileSync(p,'#!/usr/bin/env node\\n'+s);\"",
+    "prepublishOnly": "npm run build && npm test",
+    "prepack": "npm run build",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "arvancloud",
+    "arvancai",
+    "mcp",
+    "model-context-protocol",
+    "cdn",
+    "dns",
+    "cursor",
+    "claude",
+    "windsurf",
+    "codex"
+  ],
+  "license": "MIT",
+  "homepage": "https://www.npmjs.com/package/arvancai",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1131.0",
+    "@modelcontextprotocol/server": "^2.0.0",
+    "zod": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  }
+}

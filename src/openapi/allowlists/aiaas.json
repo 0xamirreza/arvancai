@@ -1,0 +1,180 @@
+{
+  "product": "aiaas",
+  "source": "aiaas-1.0.json",
+  "title": "ai-ml-backend",
+  "version": "1.0",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/ai/v1/buckets/{region}"
+    },
+    {
+      "method": "GET",
+      "path": "/ai/v1/datasets"
+    },
+    {
+      "method": "POST",
+      "path": "/ai/v1/datasets"
+    },
+    {
+      "method": "PUT",
+      "path": "/ai/v1/datasets"
+    },
+    {
+      "method": "GET",
+      "path": "/ai/v1/datasets/{dataSetID}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/ai/v1/datasets/{dataSetID}"
+    },
+    {
+      "method": "GET",
+      "path": "/datasources"
+    },
+    {
+      "method": "POST",
+      "path": "/datasources/file"
+    },
+    {
+      "method": "POST",
+      "path": "/datasources/s3"
+    },
+    {
+      "method": "GET",
+      "path": "/datasources/{data_source_id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/datasources/{data_source_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/dbaas/datacenters"
+    },
+    {
+      "method": "GET",
+      "path": "/endpoints"
+    },
+    {
+      "method": "POST",
+      "path": "/endpoints"
+    },
+    {
+      "method": "GET",
+      "path": "/endpoints/{endpoint_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/endpoints/{endpoint_id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/endpoints/{endpoint_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/endpoints/{endpoint_id}/metric/{metric}"
+    },
+    {
+      "method": "GET",
+      "path": "/guardrail-rules"
+    },
+    {
+      "method": "POST",
+      "path": "/guardrail-rules"
+    },
+    {
+      "method": "GET",
+      "path": "/guardrail-rules/endpoint/{endpoint_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/guardrail-rules/{id}"
+    },
+    {
+      "method": "PUT",
+      "path": "/guardrail-rules/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/guardrail-rules/{id}"
+    },
+    {
+      "method": "GET",
+      "path": "/knowledge-bases"
+    },
+    {
+      "method": "POST",
+      "path": "/knowledge-bases"
+    },
+    {
+      "method": "GET",
+      "path": "/knowledge-bases/{endpoint_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/knowledge-bases/{knowledge_base_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/knowledge-bases/{knowledge_base_id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/knowledge-bases/{knowledge_base_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/knowledge-bases/{knowledge_base_id}/datasources"
+    },
+    {
+      "method": "POST",
+      "path": "/knowledge-bases/{knowledge_base_id}/datasources/file"
+    },
+    {
+      "method": "POST",
+      "path": "/knowledge-bases/{knowledge_base_id}/datasources/s3"
+    },
+    {
+      "method": "DELETE",
+      "path": "/knowledge-bases/{knowledge_base_id}/datasources/{data_source_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/knowledge-bases/{knowledge_base_id}/endpoints"
+    },
+    {
+      "method": "GET",
+      "path": "/models"
+    },
+    {
+      "method": "POST",
+      "path": "/models"
+    },
+    {
+      "method": "GET",
+      "path": "/models/suggestions"
+    },
+    {
+      "method": "POST",
+      "path": "/models/suggestions"
+    },
+    {
+      "method": "GET",
+      "path": "/models/{model_id}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/models/{model_id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/models/{model_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/providers"
+    }
+  ]
+}

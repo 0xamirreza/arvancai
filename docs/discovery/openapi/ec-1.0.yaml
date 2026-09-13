@@ -1,0 +1,1181 @@
+openapi: 3.0.2
+info:
+  version: 1.8.1
+  title: Edge Computing
+  description: ArvanCloud Edge Computing APIs
+servers:
+  - url: "https://napi.arvancloud.ir/edge-computing/v1"
+paths:
+  /edge-computes:
+    get:
+      parameters:
+        - name: manged
+          $ref: "#/components/parameters/managed"
+        - name: application
+          schema:
+            type: string
+          in: query
+        - name: q
+          schema:
+            type: string
+          description: Search Query
+          in: query
+        - name: page
+          $ref: "#/components/parameters/page"
+        - name: "per_page"
+          $ref: "#/components/parameters/per_page"
+      summary: Get Edge Computes
+      operationId: edge-compute.get
+      tags:
+        - Edge Compute
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EdgeComputes"
+    post:
+      summary: Create Edge Compute
+      operationId: edge-compute.create
+      tags:
+        - Edge Compute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EdgeCompute"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EdgeComputeResource"
+  "/edge-computes/{edgeComputeId}":
+    get:
+      summary: Show Edge Compute
+      operationId: edge-compute.show
+      tags:
+        - Edge Compute
+      responses:
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EdgeComputeResource"
+    put:
+      summary: Update Edge Compute
+      operationId: edge-compute.update
+      tags:
+        - Edge Compute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EdgeCompute"
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EdgeComputeResource"
+    delete:
+      summary: Delete Edge Compute
+      description: ""
+      operationId: edge-compute.delete
+      tags:
+        - Edge Compute
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Resource deleted successfully"
+    parameters:
+      - $ref: "#/components/parameters/edge_compute_id"
+  "/edge-computes/{edgeComputeId}/routes":
+    parameters:
+      - $ref: "#/components/parameters/edge_compute_id"
+    get:
+      summary: Edge Compute Routes
+      tags:
+        - Routes
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RoutesPagination"
+      operationId: edge-compute.routes.get
+      description: Get list of edge compute routes (access paths)
+      parameters: []
+    post:
+      summary: Create Edge Compute Route
+      tags:
+        - Routes
+      operationId: edge-compute.routes.create
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Route"
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Route"
+  "/edge-computes/{edgeComputeId}/routes/{route_id}":
+    parameters:
+      - name: route_id
+        required: true
+        schema:
+          type: string
+        in: path
+      - $ref: "#/components/parameters/edge_compute_id"
+    put:
+      summary: Update Edge Compute Route
+      tags:
+        - Routes
+      operationId: edge-compute.routes.update
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Route"
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RouteUpdateRequest"
+    delete:
+      summary: Delete Edge Compute Route
+      tags:
+        - Routes
+      operationId: edge-compute.routes.delete
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    readOnly: true
+  /edge-computes/{edgeComputeId}/deployments:
+    get:
+      parameters:
+        - $ref: "#/components/parameters/edge_compute_id"
+        - $ref: "#/components/parameters/per_page"
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/search_query"
+      summary: Get EdgeCompute deployments history
+      operationId: edge-compute.deploy.history
+      tags:
+        - Deployments
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Deployments"
+  /edge-computes/deploy:
+    post:
+      summary: Deploy Edge Compute (Update Or Create)
+      operationId: edge-compute.deploy
+      tags:
+        - Deployments
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                name:
+                  type: string
+                  description: "Edge Compute name"
+                namespace:
+                  type: string
+                  description: "Namespace name"
+                bundled_code:
+                  type: string
+                  description: "Javascript bundled code"
+                tag:
+                  type: string
+                  example: "1.0.0"
+              required:
+                - name
+                - bundled_code
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EdgeComputeResource"
+  /edge-computes/{edgeComputeId}/reports/console-logs:
+    get:
+      operationId: edgecomputes.reports.consoleLogs
+      tags:
+        - "Reports"
+      parameters:
+        - $ref: "#/components/parameters/edge_compute_id"
+        - $ref: "#/components/parameters/console_log_report_period"
+        - $ref: "#/components/parameters/console_log_levels"
+        - $ref: "#/components/parameters/console_log_search"
+      summary: Get EdgeCompute Console Logs Report
+      description: Fetch console logs for a specific edge compute instance with optional filtering by log levels, search term, and time period. Supports pagination.
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ConsoleLogResourcePagination"
+        "400":
+          description: Invalid input provided (e.g., invalid period format).
+        "422":
+          description: Validation error, such as an invalid log level or malformed query parameters.
+  /edge-computes/{edgeComputeId}/reports/requests:
+    get:
+      operationId: edgecomputes.reports.requests
+      tags:
+        - "Reports"
+      parameters:
+        - $ref: "#/components/parameters/edge_compute_id"
+        - $ref: "#/components/parameters/request_report_period"
+        - $ref: "#/components/parameters/reports_until"
+        - $ref: "#/components/parameters/reports_since"
+      summary: Get EdgeCompute Requests Report
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportChart"
+  /reports/requests:
+    get:
+      operationId: reports.requests
+      tags:
+        - "Reports"
+      parameters:
+        - $ref: "#/components/parameters/request_report_period"
+      summary: Get Account Requests Report
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportChart"
+  /edge-computes/{edgeComputeId}/env-variables:
+    get:
+      operationId: edgecomputes.env-variables.index
+      tags:
+        - "Env Variables"
+      parameters:
+        - $ref: "#/components/parameters/edge_compute_id"
+      description: Get list of edge compute env variables
+      summary: Get EdgeCompute Env Variables
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/EnvVariable"
+    post:
+      operationId: edgecomputes.env-variables.store
+      tags:
+        - "Env Variables"
+      parameters:
+        - $ref: "#/components/parameters/edge_compute_id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EnvVariable"
+      summary: Set EdgeCompute Env Variable
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Resource updated successfully"
+  /edge-computes/{edgeComputeId}/env-variables/delete:
+    post:
+      operationId: edgecomputes.env-variables.delete
+      tags:
+        - "Env Variables"
+      parameters:
+        - $ref: "#/components/parameters/edge_compute_id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keys:
+                  type: array
+                  items:
+                    type: string
+      summary: Delete EdgeCompute Env Variable
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Resource deleted successfully"
+  /namespace:
+    get:
+      summary: Get namespace Settings
+      operationId: namespace.get
+      tags:
+        - Namespace
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccountSettings"
+  /plans:
+    get:
+      tags:
+        - Plans
+      summary: Get All plans
+      responses:
+        "200":
+          description: A list of feature sets
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PlansResponse"
+  /applications:
+    get:
+      tags:
+        - Applications
+      summary: Get All application templates
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ApplicationResource"
+    post:
+      tags:
+        - Applications
+      summary: Create an application
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateApplicationRequest"
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EdgeComputeResource"
+  /applications/{edgeComputeId}/metrics:
+    get:
+      summary: Get Application Metrics Settings
+      operationId: edge-compute.applications.metrics
+      tags:
+        - Applications
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    oneOf:
+                      - $ref: "#/components/schemas/WaitingRoomMetrics"
+  "/applications/{edgeComputeId}":
+    patch:
+      summary: Update Application Settings
+      operationId: edge-compute.applications.update
+      tags:
+        - Applications
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                domain_name:
+                  type: string
+                  example: example.com
+                access_route_id:
+                  type: string
+                  description: "Default Access Route ID"
+                  format: uuid
+                name:
+                  type: string
+                  description: "Application name"
+                  example: "my-app"
+                description:
+                  type: string
+                  description: "Application description"
+                  example: "My Application"
+                status:
+                  type: string
+                  description: "Application status"
+                  example: "active"
+                  enum: ["active", "inactive"]
+                options:
+                  type: object
+                  description: "Application options"
+                  example: { "key": "value" }
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "updated successfully"
+  /templates:
+    get:
+      summary: Get list of templates
+      tags:
+        - Templates
+      operationId: templates.get
+      description: Get Tempalets
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TemplateResourcePagination"
+  /templates/{key}:
+    parameters:
+      - $ref: "#/components/parameters/template_key"
+    get:
+      summary: Get a template
+      tags:
+        - Templates
+      operationId: template.get
+      description: Get Tempalets
+      responses:
+        "200":
+          description: "EdgeCompute creation template"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Template"
+components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: Authorization
+  schemas:
+    CreateApplicationRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: "Edge Compute name"
+        application_key:
+          type: string
+          description: "Application key"
+        domain_name:
+          type: string
+          description: "Domain name"
+        access_route_id:
+          type: string
+          description: "Default Access Route ID"
+          format: uuid
+        domain_id:
+          type: string
+          description: "Domain ID"
+        options:
+          type: object
+          description: "Application options"
+          example: { "key": "value" }
+    ApplicationResource:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "d4e7fd30-6f4e-4a0b-8e5a-ae2d54a6f5f8"
+          readOnly: true
+        key:
+          type: string
+          example: "test"
+          readOnly: true
+        name:
+          type: string
+          example: "Test application"
+          readOnly: true
+        description:
+          type: string
+          example: "This is a test application"
+          readOnly: true
+        options:
+          type: array
+          readOnly: true
+          items:
+            $ref: "#/components/schemas/ApplicationOption"
+    ApplicationOption:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Option Name"
+          readOnly: true
+        description:
+          type: string
+          example: "Option Description"
+          readOnly: true
+        key:
+          type: string
+          example: "option_key"
+          readOnly: true
+        type:
+          type: string
+          enum:
+            - string
+            - json
+          example: "string"
+          readOnly: true
+        default_value:
+          type: string
+          example: "default_value"
+          readOnly: true
+        required:
+          type: boolean
+          example: true
+    PlansResponse:
+      type: object
+      properties:
+        feature_sets:
+          type: array
+          items:
+            $ref: "#/components/schemas/FeatureSet"
+        plans:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/Plan"
+
+    FeatureSet:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the feature set
+        label:
+          type: string
+          description: The label of the feature set
+        features:
+          type: array
+          items:
+            $ref: "#/components/schemas/Feature"
+
+    Feature:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the feature
+        meta:
+          type: object
+          properties:
+            description:
+              type: string
+              description: Description of the feature
+            label:
+              type: string
+              description: Label of the feature
+        plans:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/FeaturePlan"
+
+    FeaturePlan:
+      type: object
+      properties:
+        labels:
+          type: string
+          nullable: true
+          description: Labels of the feature plan
+        available_params:
+          type: string
+          nullable: true
+          description: Available parameters of the feature plan
+        tip:
+          type: string
+          nullable: true
+          description: Tip of the feature plan
+
+    Plan:
+      type: object
+      properties:
+        key:
+          type: string
+          description: The key of the plan
+        monthly_cost:
+          type: string
+          description: The monthly cost of the plan
+        name:
+          type: string
+          description: The name of the plan
+    EdgeComputes:
+      type: object
+      title: EdgeComputes
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/EdgeComputeResource"
+        meta:
+          $ref: "#/components/schemas/PaginationMeta"
+    EdgeComputeResource:
+      type: object
+      title: EdgeCompute
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        is_managed:
+          type: boolean
+          example: false
+        application:
+          type: object
+          properties:
+            name:
+              type: string
+              readOnly: true
+            key:
+              type: string
+              readOnly: true
+        name:
+          type: string
+          format: regex
+          pattern: '^[a-z0-9\-]+$'
+          maxLength: 150
+          readOnly: true
+        description:
+          type: string
+          readOnly: true
+        default_access_path:
+          type: string
+          readOnly: true
+          example: 6c407e4c-23c8-4542-baf8-8b0c18181b69.r1ec.ir
+        default_route_id:
+          type: string
+          format: uuid
+        bundled_code:
+          type: string
+          description: "The bundled code of the edge compute. Empty for managed edge computes."
+        status:
+          type: string
+          enum: ["active", "inactive"]
+          default: "active"
+        namespace:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+    EdgeCompute:
+      type: object
+      title: EdgeCompute
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          format: regex
+          pattern: '^[a-z0-9\-]+$'
+          maxLength: 150
+        description:
+          type: string
+        default_access_path:
+          type: string
+          readOnly: true
+          example: 6c407e4c-23c8-4542-baf8-8b0c18181b69.r1ec.ir
+        default_route_id:
+          type: string
+          format: uuid
+          readOnly: true
+        default_domain:
+          type: string
+          readOnly: true
+          example: example.com
+        bundled_code:
+          type: string
+        status:
+          type: string
+          enum: ["active", "inactive"]
+          default: "active"
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+        - bundled_code
+        - name
+    ReportChart:
+      type: object
+      properties:
+        categories:
+          type: array
+          items:
+            type: string
+            format: date-time
+            example: "2024-07-20T08:00:00Z"
+        series:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                example: "requests"
+              data:
+                type: array
+                items:
+                  type: integer
+                example: [8100]
+    PaginationMeta:
+      title: PaginationMeta
+      type: object
+      properties:
+        total:
+          type: integer
+        per_page:
+          type: integer
+          minimum: 5
+          maximum: 500
+        page:
+          type: integer
+          minimum: 1
+        total_page:
+          type: integer
+    EnvVariable:
+      type: object
+      properties:
+        key:
+          type: string
+          description: The key of the environment variable
+        value:
+          type: string
+          description: The value of the environment variable
+        type:
+          type: string
+          enum:
+            - string
+            - json
+          description: The type of the environment variable
+        is_secret:
+          type: boolean
+          description: Whether the environment variable is a secret
+      required:
+        - key
+        - value
+        - is_secret
+        - type
+    AccountInfo:
+      type: object
+      properties:
+        first_name:
+          type: string
+          description: "The first name of the account holder."
+          example: "John"
+          readOnly: true
+        last_name:
+          type: string
+          description: "The last name of the account holder."
+          example: "Doe"
+          readOnly: true
+        full_name:
+          type: string
+          description: "The full name of the account holder."
+          example: "John Doe"
+          readOnly: true
+        email:
+          type: string
+          format: email
+          description: "The email address of the account holder."
+          example: "john.doe@example.com"
+          readOnly: true
+        country:
+          type: string
+          description: "The country of the account holder."
+          example: "IR"
+          readOnly: true
+        language:
+          type: string
+          description: "The preferred language of the account holder."
+          example: "en"
+          readOnly: true
+    AccountSettings:
+      title: AccountSettings
+      type: object
+      properties:
+        account:
+          $ref: "#/components/schemas/AccountInfo"
+        namespace:
+          type: string
+          readOnly: true
+        domain:
+          type: string
+          readOnly: true
+          format: hostname
+        plan:
+          type: integer
+          minimum: 1
+          maximum: 4
+        account_id:
+          type: string
+          format: uuid
+          readOnly: true
+    Template:
+      title: Template
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        key:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        bundled_code:
+          type: string
+        url:
+          type: string
+          format: url
+        files:
+          type: array
+          items:
+            $ref: "#/components/schemas/JsFile"
+    ConsoleLog:
+      type: object
+      properties:
+        time:
+          type: string
+          format: date-time
+          description: The timestamp of the log entry.
+        computeid:
+          type: string
+          description: The ID of the Edge Compute instance.
+        level:
+          type: string
+          enum: [DEBUG, INFO, WARN, ERROR]
+          description: The severity level of the log.
+        value:
+          type: string
+          description: The log message content.
+    TemplateResource:
+      title: Template
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        key:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        url:
+          type: string
+          format: url
+    JsFile:
+      title: JsFile
+      type: object
+      properties:
+        name:
+          type: string
+        content:
+          type: string
+    WaitingRoomMetrics:
+      title: WaitingRoomMetrics
+      type: object
+      properties:
+        real_time_metrics:
+          type: object
+          properties:
+            active_users_count:
+              type: integer
+              readOnly: true
+            waiting_users_count:
+              type: integer
+              readOnly: true
+            timestamp:
+              type: integer
+              readOnly: true
+        charts:
+          $ref: "#/components/schemas/ReportChart"
+    TemplateResourcePagination:
+      title: TemplateResourcePagination
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/TemplateResource"
+        meta:
+          $ref: "#/components/schemas/PaginationMeta"
+    ConsoleLogResourcePagination:
+      title: ConsoleLogResourcePagination
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/ConsoleLog"
+        meta:
+          $ref: "#/components/schemas/PaginationMeta"
+    Deployment:
+      title: Deployment
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        tag:
+          type: string
+          maxLength: 8
+          example: 1.0.0
+        deployed_at:
+          type: string
+          format: date-time
+          readOnly: true
+    Deployments:
+      title: Deployments
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Deployment"
+        meta:
+          $ref: "#/components/schemas/PaginationMeta"
+    RouteUpdateRequest:
+      title: Route
+      type: object
+      properties:
+        status:
+          type: string
+          enum: ["active", "inactive"]
+        url:
+          type: string
+          format: uri-template
+    Route:
+      title: Route
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        domain:
+          type: string
+          format: hostname
+        status:
+          type: string
+          enum: ["active", "inactive"]
+        url:
+          type: string
+          format: uri-template
+        associated_page_rule:
+          type: string
+          format: uuid
+          readOnly: true
+      required:
+        - status
+        - url
+        - domain
+    ApplicationDeployOption:
+      type: object
+      properties:
+        value:
+          type: string
+          description: The value of the deploy option
+      required:
+        - value
+      additionalProperties: false
+    ApplicationDeployOptions:
+      type: object
+      additionalProperties:
+        $ref: "#/components/schemas/ApplicationDeployOption"
+    RoutesPagination:
+      title: Routes
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Route"
+        meta:
+          $ref: "#/components/schemas/PaginationMeta"
+  parameters:
+    id:
+      name: id
+      schema:
+        type: string
+        format: uuid
+      in: query
+    managed:
+      name: manged
+      schema:
+        type: boolean
+      in: query
+    search_query:
+      name: q
+      schema:
+        type: string
+      description: Search Query
+      in: query
+    per_page:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+    page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+    template_key:
+      name: key
+      in: path
+      schema:
+        type: string
+      description: template key
+      required: true
+    route_id:
+      name: id
+      in: path
+      schema:
+        type: string
+      description: Route id
+      required: true
+    edge_compute_id:
+      name: edgeComputeId
+      in: path
+      schema:
+        type: string
+      description: Edge Compute id
+      required: true
+    console_log_report_period:
+      name: period
+      in: query
+      required: false
+      description: |
+        The time period for fetching logs. Specifies the duration relative to the current time. Supported values: `5m`, `15m`, `30m`, `1h`, `6h`, `12h`, `24h`.
+      schema:
+        type: string
+        enum: ["5m", "15m", "30m", "1h", "6h", "12h", "24h"]
+        default: "1h"
+    console_log_levels:
+      name: log_levels[]
+      in: query
+      required: false
+      description: |
+        Filter logs by specific log levels. If omitted, no log level filtering is applied. Supported values: `DEBUG`, `INFO`, `WARN`, `ERROR`.
+      schema:
+        type: array
+        items:
+          type: string
+          enum: [DEBUG, INFO, WARN, ERROR]
+      style: form
+      explode: true
+    console_log_search:
+      name: search
+      in: query
+      required: false
+      description: A search term to filter logs based on the log message content.
+      schema:
+        type: string
+    request_report_period:
+      name: period
+      in: query
+      schema:
+        type: string
+        enum: ["1h", "3h", "6h", "12h", "24h", "2d", "7d", "30d"]
+      description: report period
+      required: true
+    reports_since:
+      name: since
+      in: query
+      schema:
+        type: string
+        format: datetime
+        example: "2010-01-03T15:04:05+03:30"
+      description: start report period (RFC3339)
+    reports_until:
+      name: until
+      in: query
+      schema:
+        type: string
+        format: datetime
+        example: "2010-01-03T15:04:05+03:30"
+      description: end of report period (RFC3339)
+security:
+  - ApiKey: []

@@ -1,0 +1,10 @@
+{
+  "mcp": {
+    "arvancai": {
+      "command": "arvancai",
+      "env": {
+        "ARVANCLOUD_API_KEY": "<MU-KEY>"
+      }
+    }
+  }
+}

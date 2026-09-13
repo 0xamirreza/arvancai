@@ -1,0 +1,566 @@
+[
+  {
+    "page": "aiaas/api-usage/index.html",
+    "title": "ساخت Endpoint | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "cdn/acceleration/index.html",
+    "title": "شتاب‌دهی وب | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 6,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"status\":\"on\",\"extensions\":[\"css\"]}",
+      "{\"status\":\"on\",\"extensions\":[\"type\"]}",
+      "{\"status\":\"on\"}"
+    ]
+  },
+  {
+    "page": "cdn/advanced-settings/index.html",
+    "title": "تنظیمات پیشرفته | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"method\":\"cluster_chash\",\"next_upstream_tcp\":\"on\",\"protocol\":\"https\",\"keepalive\":\"on\",\"max_fails\":5,\"fail_timeout\":\"10s\"}"
+    ]
+  },
+  {
+    "page": "cdn/analytics/logging/index.html",
+    "title": "ارسال لاگ | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 6,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"name\":\"API Log\",\"description\":\"\",\"type\":\"access\",\"connection_type\":\"arvan_s3\",\"data_format\":{\"method\":true,\"scheme\":true,\"domain\":true,\"referer\":true,\"ip\":true,\"ua\":true,\"country\":true,\"asn\":true,\"content_type\":true,\"status\":true,\"server_port\":true,\"bytes_sent\":true,\"bytes_received\":true,\"upstream_time\":true,\"cache\":true,\"request_id\":true,\"uri\":true,\"query_string\":true},\"settings\":{\"sample_rate\":\"100\",\"s3_endpoint\":\"https://s3.ir-thr-at1.arvanstorage.ir\",\"access_key\":\"Arvan_Access_KEY\",\"secret_key\":\"Arvan_Secret_KEY\",\"bucket_name\":\"exampleBucket\",\"object_size\":\"100000\",\"flush_interval\":\"60\"},\"status\":true}",
+      "{\"name\":\"WAF Events Test\",\"description\":\"\",\"type\":\"waf\",\"connection_type\":\"arvan_s3\",\"data_format\":{\"product\":true,\"timestamp\":true,\"remote_address\":true,\"domain\":true,\"data\":true},\"settings\":{\"sample_rate\":\"100\",\"s3_endpoint\":\"https://s3.ir-thr-at1.arvanstorage.ir\",\"access_key\":\"Arvan_Access_KEY\",\"secret_key\":\"Arvan_Secret_KEY\",\"bucket_name\":\"arvanpro\",\"object_size\":\"100000\",\"flush_interval\":\"60\"},\"status\":true}",
+      "{\"name\":\"DNS Request Test\",\"description\":\"\",\"type\":\"dns\",\"connection_type\":\"arvan_s3\",\"data_format\":{\"timestamp\":true,\"uuid\":true,\"record\":true,\"type\":true,\"ip\":true,\"country\":true,\"asn\":true,\"response_code\":true,\"process_time\":true},\"settings\":{\"sample_rate\":\"100\",\"s3_endpoint\":\"https://s3.ir-thr-at1.arvanstorage.ir  \",\"access_key\":\"Arvan_Access_KEY\",\"secret_key\":\"Arvan_Secret_KEY\",\"bucket_name\",object_size\":\"100000\",\"flush_interval\":\"60\"},\"status\":true}"
+    ]
+  },
+  {
+    "page": "cdn/analytics/metric-exporter/index.html",
+    "title": "متریک‌های دامنه | مستندات محصولات آروان‌کلاد",
+    "urls": [
+      "https://napi.arvancloud.ir/cdn-metrics/v1/metrics/arvancloud.ir/id/[endPointId]"
+    ],
+    "curl_count": 18,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "cdn/caching/index.html",
+    "title": "تنظیمات Caching | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 22,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"cache_status\":\"off\"}",
+      "{\"cache_status\":\"uri\"}",
+      "{\"cache_status\":\"query_string\"}",
+      "{\"purge\":\"individual\",\"purge_urls\":[\"http://example.com/purge\"]}",
+      "{\"purge\":\"all\"}"
+    ]
+  },
+  {
+    "page": "cdn/cname-access/index.html",
+    "title": "مدیریت دسترسی CNAME | مستندات محصولات آروان‌کلاد",
+    "urls": [
+      "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/host-header-whitelists",
+      "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/host-header-whitelists/settings"
+    ],
+    "curl_count": 4,
+    "sample_methods": [
+      [
+        "POST",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/host-header-whitelists"
+      ],
+      [
+        "POST",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/host-header-whitelists"
+      ],
+      [
+        "PUT",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/host-header-whitelists/settings"
+      ],
+      [
+        "PUT",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/host-header-whitelists/settings"
+      ]
+    ],
+    "body_samples": []
+  },
+  {
+    "page": "cdn/custom-pages/index.html",
+    "title": "صفحات اختصاصی | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 28,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "cdn/dns-records/adding-records/index.html",
+    "title": "افزودن رکوردهای DNS | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 22,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"type\":\"A\",\"name\":\"test\",\"cloud\":false,\"value\":[{\"country\":\"\",\"ip\":\"8.8.8.8\",\"port\":null,\"weight\":null}],\"upstream_https\":\"default\",\"ip_filter_mode\":{\"count\":\"single\",\"geo_filter\":\"none\",\"order\":\"none\"},\"ttl\":120}",
+      "{\"type\":\"AAAA\",\"name\":\"test\",\"cloud\":false,\"value\":[{\"country\":\"\",\"ip\":\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\",\"port\":null,\"weight\":null}],\"upstream_https\":\"default\",\"ip_filter_mode\":{\"count\":\"single\",\"geo_filter\":\"none\",\"order\":\"none\"},\"ttl\":120}",
+      "{\"type\":\"CNAME\",\"name\":\"test\",\"cloud\":false,\"value\":{\"host_header\":\"source\",\"host\":\"cname.example.com\",\"port\":-1},\"upstream_https\":\"default\",\"ip_filter_mode\":{\"count\":\"single\",\"geo_filter\":\"none\",\"order\":\"none\"},\"ttl\":120}",
+      "{\"type\":\"ANAME\",\"name\":\"test\",\"cloud\":false,\"value\":{\"host_header\":\"source\",\"location\":\"aname.example.com\",\"port\":-1},\"upstream_https\":\"default\",\"ip_filter_mode\":{\"count\":\"single\",\"geo_filter\":\"none\",\"order\":\"none\"},\"ttl\":120}",
+      "{\"type\":\"NS\",\"name\":\"ns\",\"cloud\":true,\"value\":{\"host\":\"ns1.example.com\"},\"upstream_https\":\"default\",\"ip_filter_mode\":{\"count\":\"single\",\"geo_filter\":\"none\",\"order\":\"none\"},\"ttl\":120}"
+    ]
+  },
+  {
+    "page": "cdn/dns-records/change-default-ns/index.html",
+    "title": "تغییر NSهای پیش‌فرض | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 4,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"ns_keys\":[\"ns1.example.com\",\"ns2.example.com\"]}"
+    ]
+  },
+  {
+    "page": "cdn/dns-records/cloud/index.html",
+    "title": "نماد ابر رکوردهای DNS | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"cloud\":true}"
+    ]
+  },
+  {
+    "page": "cdn/dns-records/dns-loadbalance/index.html",
+    "title": "توزیع بار DNS | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "cdn/dns-records/dnssec/index.html",
+    "title": "تنظیم DNSSEC | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"enable\":true}"
+    ]
+  },
+  {
+    "page": "cdn/dns-records/index.html",
+    "title": "رکوردهای DNS | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "cdn/domain/cname-setup/index.html",
+    "title": "راه‌اندازی با CNAME | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "cdn/domain/index.html",
+    "title": "دامنه | مستندات محصولات آروان‌کلاد",
+    "urls": [
+      "https://napi.arvancloud.ir/cdn/4.0/domains/arvandocs.com/plan",
+      "https://napi.arvancloud.ir/cdn/4.0/domains/arvantest.ir/clone",
+      "https://napi.arvancloud.ir/cdn/4.0/domains/dns-service"
+    ],
+    "curl_count": 8,
+    "sample_methods": [
+      [
+        "GET?",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/dns-service"
+      ],
+      [
+        "GET?",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/dns-service"
+      ],
+      [
+        "GET?",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/dns-service"
+      ],
+      [
+        "GET?",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/dns-service"
+      ],
+      [
+        "PUT",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/arvandocs.com/plan"
+      ],
+      [
+        "PUT",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/arvandocs.com/plan"
+      ],
+      [
+        "PUT",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/arvandocs.com/plan"
+      ],
+      [
+        "PUT",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/arvandocs.com/plan"
+      ],
+      [
+        "POST",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/arvantest.ir/clone"
+      ],
+      [
+        "POST",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/arvantest.ir/clone"
+      ]
+    ],
+    "body_samples": [
+      "{\"domain\":\"arvandocs.ir\",\"domain_type\":\"full\"}",
+      "{\"domain\":\"cname.arvandocs.ir\",\"domain_type\":\"partial\",\"plan_level\":2}",
+      "{\"plan_level\":\"2\"}",
+      "{</span><br/></div><div class=\"token-line\" style=\"color:#F8F8F2\"><span class=\"token plain\">\"from\": \"string\"}"
+    ]
+  },
+  {
+    "page": "cdn/domain/transfer/index.html",
+    "title": "انتقال دامنه | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 4,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"account_id\":\"Destination_Account_ID\"}",
+      "{\"domain\":\"example.com\",\"status\":\"accept\"}"
+    ]
+  },
+  {
+    "page": "cdn/https-settings/index.html",
+    "title": "تنظیمات SSL/TLS | مستندات محصولات آروان‌کلاد",
+    "urls": [
+      "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/load-balancers/settings",
+      "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl",
+      "https://napi.arvancloud.ir/cdn/4.0/domains/yourdomain.com/ssl/certificates"
+    ],
+    "curl_count": 14,
+    "sample_methods": [
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "GET?",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/yourdomain.com/ssl/certificates"
+      ],
+      [
+        "GET?",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/yourdomain.com/ssl/certificates"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ],
+      [
+        "PATCH",
+        "https://napi.arvancloud.ir/cdn/4.0/domains/example.com/ssl"
+      ]
+    ],
+    "body_samples": [
+      "{\"ssl_status\":true}",
+      "{\"https_redirect\":true}",
+      "{\"replace_http\":true}",
+      "{\"tls_version\":\"TLSv1.2\"}",
+      "{\"hsts_status\":true,\"hsts_max_age\":\"2mo\",\"hsts_subdomain\":true,\"hsts_preload\":true}"
+    ]
+  },
+  {
+    "page": "cdn/list/index.html",
+    "title": "لیست‌ IPها | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "cdn/security/ddos/index.html",
+    "title": "جلوگیری از حملات DDoS | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 8,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"protection_mode\":\"cookie\"}",
+      "{\"protection_mode\":\" javascript\"}",
+      "{\"protection_mode\":\"recaptcha\"}</span><br/></div></code></pre></div></div>\n<h4 class=\"anchor anchorTargetStickyNavbar_Vzrq\" id=\"تغییر-نوع-کپچا-با-استفاده-از-api\">تغییر نوع کپچا با استفاده از API<a aria-label=\"لینک مستقیم به تغییر نوع کپچا با استفاده از API\" class=\"hash-link\" href=\"./index.html\" title=\"لینک مستقیم به تغییر نوع کپچا با استفاده از API\" translate=\"no\">​</a></h4>\n<div class=\"language-json codeBlockContainer_Ckt0 theme-code-block\" style=\"--prism-color:#F8F8F2;--prism-background-color:#282A36\"><div class=\"codeBlockContent_QJqH\"><pre class=\"prism-code language-json codeBlock_bY9V thin-scrollbar\" style=\"color:#F8F8F2;background-color:#282A36\" tabindex=\"0\"><code class=\"codeBlockLines_e6Vv\"><div class=\"token-line\" style=\"color:#F8F8F2\"><span class=\"token plain\">curl --location --request PATCH 'https</span><span class=\"token operator\">:</span><span class=\"token comment\" style=\"color:rgb(98, 114, 164)\">//napi.arvancloud.ir/cdn/4.0/domains/example.com/ddos' \\</span><span class=\"token plain\"></span><br/></div><div class=\"token-line\" style=\"color:#F8F8F2\"><span class=\"token plain\">--header 'authority</span><span class=\"token operator\">:</span><span class=\"token plain\"> napi.arvancloud.ir' \\</span><br/></div><div class=\"token-line\" style=\"color:#F8F8F2\"><span class=\"token plain\">--header 'accept</span><span class=\"token operator\">:</span><span class=\"token plain\"> application/json</span><span class=\"token punctuation\" style=\"color:rgb(248, 248, 242)\">,</span><span class=\"token plain\"> text/plain</span><span class=\"token punctuation\" style=\"color:rgb(248, 248, 242)\">,</span><span class=\"token plain\"> *</span><span class=\"token comment\" style=\"color:rgb(98, 114, 164)\">/*' \\</span><br/></div><div class=\"token-line\" style=\"color:#F8F8F2\"><span class=\"token comment\" style=\"color:rgb(98, 114, 164)\">--header 'authorization: API KEY 1 2 3 4' \\</span><br/></div><div class=\"token-line\" style=\"color:#F8F8F2\"><span class=\"token comment\" style=\"color:rgb(98, 114, 164)\">--header 'cache-control: no-cache' \\</span><br/></div><div class=\"token-line\" style=\"color:#F8F8F2\"><span class=\"token comment\" style=\"color:rgb(98, 114, 164)\">--header 'content-type: application/json' \\</span><br/></div><div class=\"token-line\" style=\"color:#F8F8F2\"><span class=\"token comment\" style=\"color:rgb(98, 114, 164)\">--data-raw '{\"protection_mode\":\"captcha\",\"captcha_service\":\"hcaptcha\",\"ttl\":0}"
+    ]
+  },
+  {
+    "page": "cdn/security/firewall/index.html",
+    "title": "تنظیمات فایروال | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 16,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"name\":\"Test Rule\",\"note\":\"\",\"is_enabled\":true,\"action\":\"allow\",\"action_details\":{\"mode\":1,\"ttl\":120,\"https_only\":false},\"filter_expr\":\"((http.host == \\\"example.com\\\"))\"}",
+      "{\"name\":\"deny rule\",\"note\":\"\",\"is_enabled\":true,\"action\":\"deny\",\"action_details\":{\"mode\":1,\"ttl\":120,\"https_only\":false},\"filter_expr\":\"((http.host == \\\"example.com\\\"))\"}",
+      "{\"name\":\"challenge\",\"note\":\"challenge\",\"is_enabled\":true,\"action\":\"challenge\",\"action_details\":{\"mode\":1,\"ttl\":120,\"https_only\":false},\"filter_expr\":\"((http.host == \\\"example.com\\\"))\"}",
+      "{\"name\":\"ByPass\",\"note\":\"\",\"is_enabled\":true,\"action\":\"bypass\",\"action_details\":{\"waf\":true,\"rlimit\":true,\"challenge\":true},\"filter_expr\":\"((http.host == \\\"example.com\\\"))\"}"
+    ]
+  },
+  {
+    "page": "cdn/security/known-bots/index.html",
+    "title": "بات‌های شناخته‌شده | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"skip_global_firewall\":true}"
+    ]
+  },
+  {
+    "page": "cdn/security/rate-limit/index.html",
+    "title": "محدودیت تعداد درخواست‌ | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 4,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"is_enabled\":true,\"url_pattern\":\"example.com/**\",\"description\":\"\",\"exclude_sources\":[],\"rate\":1,\"burst\":4000000,\"block_duration\":0,\"time_duration\":10,\"allowed_methods\":[],\"action\":\"challenge\",\"action_details\":{\"mode\":1,\"ttl\":120,\"https_only\":false}}"
+    ]
+  },
+  {
+    "page": "cdn/security/waf/index.html",
+    "title": "دیوار آتش وب | WAF | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 10,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"mode\":\"off\"}",
+      "{\"mode\":\"detect\"}",
+      "{\"mode\":\"protect\"}",
+      "{\"disabled_rules\":[\"21001\",\"21003\",\"21006\",\"21009\",\"40026\",\"99001\",\"21002\"]}",
+      "{\"id\":null,\"url_pattern\":\"example.com/**\",\"sources\":[\"192.168.1.1/32\"],\"description\":\"Test For Docs\",\"action\":\"protect\"}"
+    ]
+  },
+  {
+    "page": "changelog/index.html",
+    "title": "گزارش تغییرات | مستندات محصولات آروان‌کلاد",
+    "urls": [
+      "https://napi.arvancloud.ir/cdn-metrics/v1/metrics/",
+      "https://napi.arvancloud.ir/cdn-metrics/v1/metrics/{domain}/"
+    ],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "cloud-container/catalogs/wordpress/index.html",
+    "title": "WordPress | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 4,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "developer-tools/api/api-usage/index.html",
+    "title": "استفاده از API | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 24,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "developer-tools/cli/install/index.html",
+    "title": "نصب ArvanCLI | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "developer-tools/sdk/object-storage/credentials/index.html",
+    "title": "احراز هویت | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "developer-tools/sdk/object-storage/upload-presigned/index.html",
+    "title": "بارگذاری Pre-signed داخل صندوقچه | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 6,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "edge-computing/examples/arvanstorage-upload/index.html",
+    "title": "آپلود فایل در فضای ابری آروان | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 5,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "edge-computing/trigger/path/index.html",
+    "title": "مسیرها | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 4,
+    "sample_methods": [],
+    "body_samples": [
+      "{\"domain\":\"myexampledomain.ir.ir\",\"url\":\"/app/*\",\"status\":\"active\"}"
+    ]
+  },
+  {
+    "page": "object-storage/access-point/index.html",
+    "title": "نقطه دسترسی | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 1,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "object-storage/bucket-policy/index.html",
+    "title": "باکت پالیسی | Bucket Policy | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "object-storage/buckets/cors-setting/index.html",
+    "title": "تنظیمات CORS | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 3,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "object-storage/buckets/custom-domain/index.html",
+    "title": "تعریف دامنه‌ اختصاصی | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 1,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "object-storage/buckets/index.html",
+    "title": "صندوقچه‌ها | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "object-storage/buckets/static-website/index.html",
+    "title": "وب‌سایت استاتیک | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 4,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "object-storage/data-catalog/index.html",
+    "title": "دیتا کاتالوگ چیست؟ | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 4,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "object-storage/limits/index.html",
+    "title": "قوانین و محدودیت‌های فضای ابری آروان | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "object-storage/metrics/index.html",
+    "title": "متریک‌های صندوقچه | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "object-storage/permission/index.html",
+    "title": "دسترسی نمایش | مستندات محصولات آروان‌کلاد",
+    "urls": [],
+    "curl_count": 6,
+    "sample_methods": [],
+    "body_samples": []
+  },
+  {
+    "page": "vod/media/recommendation/index.html",
+    "title": "پیشنهاد ویدیوهای مشابه | مستندات محصولات آروان‌کلاد",
+    "urls": [
+      "https://napi.arvancloud.ir/vod/2.0/videos/{VIDEO_ID}/recommendation"
+    ],
+    "curl_count": 2,
+    "sample_methods": [],
+    "body_samples": []
+  }
+]

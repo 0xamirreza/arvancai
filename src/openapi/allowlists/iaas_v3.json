@@ -1,0 +1,188 @@
+{
+  "product": "iaas_v3",
+  "source": "iaas-3.0.0.yaml",
+  "title": "Arvancloud IaaS API Documentation",
+  "version": "v3.0.1",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/availability-zones"
+    },
+    {
+      "method": "GET",
+      "path": "/firewalls"
+    },
+    {
+      "method": "POST",
+      "path": "/firewalls"
+    },
+    {
+      "method": "GET",
+      "path": "/firewalls/{firewallId}"
+    },
+    {
+      "method": "POST",
+      "path": "/firewalls/{firewallId}/rules"
+    },
+    {
+      "method": "POST",
+      "path": "/firewalls/{firewallId}/rules/batch-delete"
+    },
+    {
+      "method": "POST",
+      "path": "/firewalls/batch-delete"
+    },
+    {
+      "method": "GET",
+      "path": "/flavors"
+    },
+    {
+      "method": "GET",
+      "path": "/flavors/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/flavors/{id}/calculate"
+    },
+    {
+      "method": "GET",
+      "path": "/images"
+    },
+    {
+      "method": "POST",
+      "path": "/images"
+    },
+    {
+      "method": "GET",
+      "path": "/images/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/images/batch-delete"
+    },
+    {
+      "method": "GET",
+      "path": "/networks"
+    },
+    {
+      "method": "POST",
+      "path": "/networks"
+    },
+    {
+      "method": "GET",
+      "path": "/networks/{id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/networks/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/networks/{id}/attach"
+    },
+    {
+      "method": "POST",
+      "path": "/networks/{id}/detach"
+    },
+    {
+      "method": "GET",
+      "path": "/security-groups"
+    },
+    {
+      "method": "POST",
+      "path": "/security-groups/{id}/attach"
+    },
+    {
+      "method": "POST",
+      "path": "/security-groups/{id}/detach"
+    },
+    {
+      "method": "GET",
+      "path": "/servers"
+    },
+    {
+      "method": "POST",
+      "path": "/servers"
+    },
+    {
+      "method": "GET",
+      "path": "/servers/{id}"
+    },
+    {
+      "method": "POST",
+      "path": "/servers/{id}/discard"
+    },
+    {
+      "method": "POST",
+      "path": "/servers/{id}/power-off"
+    },
+    {
+      "method": "POST",
+      "path": "/servers/{id}/power-on"
+    },
+    {
+      "method": "POST",
+      "path": "/servers/{id}/reboot"
+    },
+    {
+      "method": "POST",
+      "path": "/servers/{id}/rename"
+    },
+    {
+      "method": "POST",
+      "path": "/servers/{id}/rescue"
+    },
+    {
+      "method": "POST",
+      "path": "/servers/{id}/reset-root-password"
+    },
+    {
+      "method": "POST",
+      "path": "/servers/{id}/resize"
+    },
+    {
+      "method": "POST",
+      "path": "/servers/{id}/resize-root-disk"
+    },
+    {
+      "method": "POST",
+      "path": "/servers/{id}/terminate"
+    },
+    {
+      "method": "POST",
+      "path": "/servers/{id}/unrescue"
+    },
+    {
+      "method": "POST",
+      "path": "/servers/batch-delete"
+    },
+    {
+      "method": "GET",
+      "path": "/servers/inquiry/{id}"
+    },
+    {
+      "method": "GET",
+      "path": "/volumes"
+    },
+    {
+      "method": "POST",
+      "path": "/volumes"
+    },
+    {
+      "method": "GET",
+      "path": "/volumes/{volumeId}"
+    },
+    {
+      "method": "POST",
+      "path": "/volumes/{volumeId}/attach"
+    },
+    {
+      "method": "POST",
+      "path": "/volumes/{volumeId}/detach"
+    },
+    {
+      "method": "POST",
+      "path": "/volumes/batch-delete"
+    }
+  ]
+}

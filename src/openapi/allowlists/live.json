@@ -1,0 +1,152 @@
+{
+  "product": "live",
+  "source": "live-2.0.json",
+  "title": "Arvan LIVE",
+  "version": "2.0",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/analytics/play-count"
+    },
+    {
+      "method": "GET",
+      "path": "/analytics/traffic"
+    },
+    {
+      "method": "GET",
+      "path": "/analytics/watch-time"
+    },
+    {
+      "method": "GET",
+      "path": "/report/geo"
+    },
+    {
+      "method": "GET",
+      "path": "/report/statistics"
+    },
+    {
+      "method": "GET",
+      "path": "/report/traffics"
+    },
+    {
+      "method": "GET",
+      "path": "/report/user-agent"
+    },
+    {
+      "method": "GET",
+      "path": "/report/visitors"
+    },
+    {
+      "method": "GET",
+      "path": "/domain"
+    },
+    {
+      "method": "POST",
+      "path": "/domain"
+    },
+    {
+      "method": "GET",
+      "path": "/streams"
+    },
+    {
+      "method": "POST",
+      "path": "/streams"
+    },
+    {
+      "method": "GET",
+      "path": "/streams/{stream}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/streams/{stream}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/streams/{stream}"
+    },
+    {
+      "method": "POST",
+      "path": "/streams/{stream}/start-pull"
+    },
+    {
+      "method": "POST",
+      "path": "/streams/{stream}/stop-pull"
+    },
+    {
+      "method": "POST",
+      "path": "/admin/streams/{stream}/start-pull"
+    },
+    {
+      "method": "POST",
+      "path": "/admin/streams/{stream}/stop-pull"
+    },
+    {
+      "method": "POST",
+      "path": "/streams/{stream}/start-record"
+    },
+    {
+      "method": "POST",
+      "path": "/streams/{stream}/stop-record"
+    },
+    {
+      "method": "GET",
+      "path": "/watermarks"
+    },
+    {
+      "method": "POST",
+      "path": "/watermarks"
+    },
+    {
+      "method": "GET",
+      "path": "/watermarks/{watermark}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/watermarks/{watermark}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/watermarks/{watermark}"
+    },
+    {
+      "method": "GET",
+      "path": "/streams/{stream_id}/metrics/concurrent-viewers"
+    },
+    {
+      "method": "GET",
+      "path": "/streams/{stream_id}/metrics/rebuffer-ratio"
+    },
+    {
+      "method": "GET",
+      "path": "/streams/{stream_id}/metrics/startup-time"
+    },
+    {
+      "method": "GET",
+      "path": "/streams/{stream_id}/metrics/bitrate"
+    },
+    {
+      "method": "GET",
+      "path": "/streams/{stream_id}/metrics/fps"
+    },
+    {
+      "method": "GET",
+      "path": "/streams/{stream_id}/metrics/ttff"
+    },
+    {
+      "method": "GET",
+      "path": "/streams/{stream_id}/metrics/watch-time"
+    },
+    {
+      "method": "GET",
+      "path": "/streams/{stream_id}/metrics/stats"
+    },
+    {
+      "method": "POST",
+      "path": "/report/watch-time"
+    },
+    {
+      "method": "POST",
+      "path": "/report/play-time"
+    }
+  ]
+}

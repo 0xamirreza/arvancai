@@ -1,0 +1,108 @@
+{
+  "product": "edge",
+  "source": "ec-1.0.yaml",
+  "title": "Edge Computing",
+  "version": "1.8.1",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/edge-computes"
+    },
+    {
+      "method": "POST",
+      "path": "/edge-computes"
+    },
+    {
+      "method": "GET",
+      "path": "/edge-computes/{edgeComputeId}"
+    },
+    {
+      "method": "PUT",
+      "path": "/edge-computes/{edgeComputeId}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/edge-computes/{edgeComputeId}"
+    },
+    {
+      "method": "GET",
+      "path": "/edge-computes/{edgeComputeId}/routes"
+    },
+    {
+      "method": "POST",
+      "path": "/edge-computes/{edgeComputeId}/routes"
+    },
+    {
+      "method": "PUT",
+      "path": "/edge-computes/{edgeComputeId}/routes/{route_id}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/edge-computes/{edgeComputeId}/routes/{route_id}"
+    },
+    {
+      "method": "GET",
+      "path": "/edge-computes/{edgeComputeId}/deployments"
+    },
+    {
+      "method": "POST",
+      "path": "/edge-computes/deploy"
+    },
+    {
+      "method": "GET",
+      "path": "/edge-computes/{edgeComputeId}/reports/console-logs"
+    },
+    {
+      "method": "GET",
+      "path": "/edge-computes/{edgeComputeId}/reports/requests"
+    },
+    {
+      "method": "GET",
+      "path": "/reports/requests"
+    },
+    {
+      "method": "GET",
+      "path": "/edge-computes/{edgeComputeId}/env-variables"
+    },
+    {
+      "method": "POST",
+      "path": "/edge-computes/{edgeComputeId}/env-variables"
+    },
+    {
+      "method": "POST",
+      "path": "/edge-computes/{edgeComputeId}/env-variables/delete"
+    },
+    {
+      "method": "GET",
+      "path": "/namespace"
+    },
+    {
+      "method": "GET",
+      "path": "/plans"
+    },
+    {
+      "method": "GET",
+      "path": "/applications"
+    },
+    {
+      "method": "POST",
+      "path": "/applications"
+    },
+    {
+      "method": "GET",
+      "path": "/applications/{edgeComputeId}/metrics"
+    },
+    {
+      "method": "PATCH",
+      "path": "/applications/{edgeComputeId}"
+    },
+    {
+      "method": "GET",
+      "path": "/templates"
+    },
+    {
+      "method": "GET",
+      "path": "/templates/{key}"
+    }
+  ]
+}
