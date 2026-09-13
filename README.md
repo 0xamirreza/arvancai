@@ -172,34 +172,6 @@ MCP alone is enough for tool calling. Skill improves agent behavior where the ho
 
 ---
 
-## Publish checklist (maintainers)
-
-```bash
-# 1) Login (2FA / granular token with publish rights)
-npm login
-# or: npm config set //registry.npmjs.org/:_authToken=npm_XXX
-
-# 2) From this repo
-git clone https://github.com/0xamirreza/arvancai.git
-cd arvancai
-npm install
-npm run build
-npm test
-
-# 3) Bump version if needed, then publish
-npm version patch   # optional
-npm publish --access public
-
-# 4) Verify
-npm view arvancai
-npm install -g arvancai
-which arvancai
-```
-
-See [PUBLISH.md](PUBLISH.md) for 2FA / token troubleshooting.
-
----
-
 ## Coverage (short)
 
 Official portal: https://www.arvancloud.ir/fa/dev/api
