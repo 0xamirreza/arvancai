@@ -19,6 +19,13 @@ export interface ArvanCloudConfig {
   s3AccessKeyId?: string;
   s3SecretAccessKey?: string;
   timeoutMs: number;
+  /** When true, block POST/PUT/PATCH/DELETE (local HTTP + bridged non-read tools). */
+  readOnly: boolean;
+}
+
+function envFlagTrue(raw: string | undefined): boolean {
+  const v = raw?.trim().toLowerCase();
+  return v === "1" || v === "true" || v === "yes" || v === "on";
 }
 
 export function loadConfig(env: NodeJS.ProcessEnv = process.env): ArvanCloudConfig {
@@ -80,27 +87,42 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): ArvanCloudConf
     s3AccessKeyId: env.ARVANCLOUD_S3_ACCESS_KEY_ID?.trim() || undefined,
     s3SecretAccessKey: env.ARVANCLOUD_S3_SECRET_ACCESS_KEY?.trim() || undefined,
     timeoutMs: Number(env.ARVANCLOUD_TIMEOUT_MS ?? 30_000),
+    readOnly: envFlagTrue(env.ARVANCLOUD_READ_ONLY),
   };
 }
 
-/** Authorization header value = Machine User key as documented (API Usage). */
+/**
+ * Strip optional scheme prefixes and return the raw Machine User token.
+ */
+export function stripApiKeyScheme(apiKey: string): string {
+  return apiKey.trim().replace(/^(apikey|api[_\s-]?key|bearer)\s+/i, "");
+}
+
+/**
+ * Canonical napi/ECC/VOD auth: `Authorization: Apikey <uuid>`.
+ * Accepts bare UUID or already-prefixed values.
+ */
 export function authHeaders(apiKey: string): Record<string, string> {
   return {
     Accept: "application/json",
-    Authorization: apiKey,
+    Authorization: `Apikey ${stripApiKeyScheme(apiKey)}`,
   };
 }
 
 /**
  * CloudLogs ingestion auth as used by official Fluent Bit integration:
- * `Authorization: Apikey <key>` when the env value has no scheme prefix.
+ * `Authorization: Apikey <key>` (same canonical form).
  * Source: https://github.com/fluent/fluent-bit/pull/11095
  */
 export function loggingAuthHeaders(apiKey: string): Record<string, string> {
-  const trimmed = apiKey.trim();
-  const hasScheme = /^(apikey|api[_\s-]?key|bearer)\s+/i.test(trimmed);
-  return {
-    Accept: "application/json",
-    Authorization: hasScheme ? trimmed : `Apikey ${trimmed}`,
-  };
+  return authHeaders(apiKey);
+}
+
+/**
+ * Hosted MCP (`mcp.arvancloud.ir`) expects:
+ *   Arvancloud-Api-Key: apikey <UUID>
+ * Docs: https://docs.arvancloud.ir/fa/developer-tools/mcp/quickstart/
+ */
+export function officialMcpApiKeyHeader(apiKey: string): string {
+  return `apikey ${stripApiKeyScheme(apiKey)}`;
 }

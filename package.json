@@ -1,7 +1,7 @@
 {
   "name": "arvancai",
-  "version": "0.5.3",
-  "description": "ArvanCloud MCP server + Agent Skill (arvancai) — official OpenAPI–backed tools for CDN, IaaS, Storage, Video, Edge, CaaS, AI, and more",
+  "version": "0.6.1",
+  "description": "ArvanCloud MCP server + Agent Skill (arvancai) — local OpenAPI tools + official hosted MCP bridge, Apikey auth, read-only mode",
   "type": "module",
   "bin": {
     "arvancai": "bin/arvancai.js",
@@ -57,6 +57,7 @@
   "homepage": "https://github.com/0xamirreza/arvancai#readme",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1131.0",
+    "@modelcontextprotocol/client": "^2.0.0",
     "@modelcontextprotocol/server": "^2.0.0",
     "zod": "^4.6.4"
   },

@@ -21,12 +21,26 @@ export function resolveApiKey(existing?: string): string {
 
 export function mcpServerEntry(apiKey: string): Record<string, unknown> {
   // Absolute node + bin path so GUI apps without nvm PATH still work.
+  const env: Record<string, string> = {
+    ARVANCLOUD_API_KEY: apiKey,
+  };
+  // Preserve optional bridge overrides from the current shell when wiring clients.
+  for (const key of [
+    "ARVANCLOUD_OFFICIAL_MCP",
+    "ARVANCLOUD_OFFICIAL_MCP_URL",
+    "ARVANCLOUD_OFFICIAL_MCP_TOOLSETS",
+    "ARVANCLOUD_OFFICIAL_MCP_TIMEOUT_MS",
+    "ARVANCLOUD_READ_ONLY",
+    "ARVANCLOUD_S3_ACCESS_KEY_ID",
+    "ARVANCLOUD_S3_SECRET_ACCESS_KEY",
+  ] as const) {
+    const v = process.env[key]?.trim();
+    if (v) env[key] = v;
+  }
   return {
     command: process.execPath,
     args: [binEntryPath()],
-    env: {
-      ARVANCLOUD_API_KEY: apiKey,
-    },
+    env,
   };
 }
 

@@ -23,13 +23,24 @@ describe("auth", () => {
     expect(cfg.storageApiBaseUrl).toBe("https://storage.arvanapis.ir/v1");
     expect(cfg.loggingBaseUrl).toBe("https://napi.arvancloud.ir/logging/v1");
     expect(cfg.s3Endpoint).toBe("https://s3.ir-thr-at1.arvanstorage.ir");
-    expect(authHeaders("test-key").Authorization).toBe("test-key");
+    expect(cfg.readOnly).toBe(false);
+    expect(authHeaders("test-key").Authorization).toBe("Apikey test-key");
+  });
+
+  it("normalizes Apikey / bare UUID for Authorization", () => {
+    expect(authHeaders("Apikey already").Authorization).toBe("Apikey already");
+    expect(authHeaders("apikey lower").Authorization).toBe("Apikey lower");
+    expect(authHeaders("Bearer tok").Authorization).toBe("Apikey tok");
   });
 
   it("formats CloudLogs Authorization with Apikey prefix", async () => {
     const { loggingAuthHeaders } = await import("../src/client/auth.js");
     expect(loggingAuthHeaders("raw-key").Authorization).toBe("Apikey raw-key");
     expect(loggingAuthHeaders("Apikey already").Authorization).toBe("Apikey already");
+  });
+
+  it("enables readOnly from env", () => {
+    expect(loadConfig({ ARVANCLOUD_API_KEY: "k", ARVANCLOUD_READ_ONLY: "1" }).readOnly).toBe(true);
   });
 });
 
@@ -89,7 +100,7 @@ describe("ArvanCloudClient", () => {
     );
   }
 
-  it("sends Authorization header as-is", async () => {
+  it("sends normalized Apikey Authorization header", async () => {
     (globalThis.fetch as ReturnType<typeof vi.fn>).mockResolvedValue(
       new Response(JSON.stringify({ data: [] }), {
         status: 200,
@@ -99,8 +110,18 @@ describe("ArvanCloudClient", () => {
 
     await client().cdnRequest("domains", { method: "GET", idempotent: true });
     const [, init] = (globalThis.fetch as ReturnType<typeof vi.fn>).mock.calls[0];
-    expect(init.headers.Authorization).toBe("secret-key-do-not-leak");
+    expect(init.headers.Authorization).toBe("Apikey secret-key-do-not-leak");
     expect(init.headers.Accept).toBe("application/json");
+  });
+
+  it("blocks mutating requests in read-only mode", async () => {
+    const c = new ArvanCloudClient(
+      loadConfig({ ARVANCLOUD_API_KEY: "k", ARVANCLOUD_READ_ONLY: "true" }),
+    );
+    await expect(c.cdnRequest("domains/x/caching/purge", { method: "POST", body: { purge: "all" } })).rejects.toMatchObject({
+      className: "read_only",
+    });
+    expect(globalThis.fetch).not.toHaveBeenCalled();
   });
 
   it("maps 401 to authentication error", async () => {

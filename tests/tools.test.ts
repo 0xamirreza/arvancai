@@ -6,16 +6,18 @@ describe("MCP tools registration", () => {
 
   beforeEach(() => {
     process.env.ARVANCLOUD_API_KEY = "test-key";
+    process.env.ARVANCLOUD_OFFICIAL_MCP = "0";
     globalThis.fetch = vi.fn();
   });
 
   afterEach(() => {
     globalThis.fetch = originalFetch;
     delete process.env.ARVANCLOUD_API_KEY;
+    delete process.env.ARVANCLOUD_OFFICIAL_MCP;
   });
 
-  it("creates server without throwing", () => {
-    const server = createServer();
+  it("creates server without throwing", async () => {
+    const server = await createServer();
     expect(server).toBeTruthy();
   });
 
@@ -24,7 +26,7 @@ describe("MCP tools registration", () => {
       new Response(JSON.stringify({ data: [{ domain: "example.com" }] }), { status: 200 }),
     );
 
-    const server = createServer();
+    const server = await createServer();
     // Access registered tools via private map is brittle; exercise via client path instead.
     const { ArvanCloudClient } = await import("../src/client/arvancloud-client.js");
     const { loadConfig } = await import("../src/client/auth.js");

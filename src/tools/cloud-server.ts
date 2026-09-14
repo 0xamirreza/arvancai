@@ -259,4 +259,27 @@ export function registerCloudServerTools(server: McpServer, ctx: ToolContext): v
       }
     },
   );
+
+  server.registerTool(
+    "get_region_quota",
+    {
+      title: "Get Cloud Server region quota",
+      description:
+        "[READ] IaaS 1.0 resource limits (not wallet balance). Official OpenAPI: GET /ecc/v1/regions/{region}/quota (singular). There is no billing/wallet API — balance is panel-only.",
+      inputSchema: z.object({ region: RegionSchema }),
+      annotations: { readOnlyHint: true, openWorldHint: true },
+    },
+    async ({ region }) => {
+      try {
+        return toolResult(
+          await ctx.client.eccRequest(`regions/${encodeURIComponent(region)}/quota`, {
+            method: "GET",
+            idempotent: true,
+          }),
+        );
+      } catch (err) {
+        return toolError(err);
+      }
+    },
+  );
 }

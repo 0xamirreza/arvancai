@@ -1,7 +1,7 @@
 # API Inventory
 
 **CDN base:** `https://napi.arvancloud.ir/cdn/4.0`  
-**Auth column:** MU = Machine User `Authorization` header (see authentication.md)  
+**Auth:** Machine User → `Authorization: Apikey <uuid>` (normalized). Hosted MCP bridge uses `Arvancloud-Api-Key`. See `authentication.md`.  
 **Verified:** `docs` = product docs curl/sample; `sdk` = official CDN Go SDK HOW-TO; `both` = both
 
 Destructive = irreversible delete / purge-all / revoke-style operations.
@@ -38,8 +38,8 @@ Destructive = irreversible delete / purge-all / revoke-style operations.
 | CDN/DNS | Toggle cloud (proxy) | PUT | `/domains/{domain}/dns-records/{id}/cloud` | MU | No | sdk |
 | CDN/DNS | Get DNSSEC | GET | `/domains/{domain}/dns-records/dnssec` | MU | No | sdk |
 | CDN/DNS | Update DNSSEC | PUT | `/domains/{domain}/dns-records/dnssec/actions` | MU | No | sdk |
-| CDN/DNS | Export BIND | GET | `/domains/{domain}/dns-records/export` | MU | No | sdk |
-| CDN/DNS | Import BIND | POST | `/domains/{domain}/dns-records/import` | MU | No | sdk |
+| CDN/DNS | Export BIND | GET | `/domains/{domain}/dns-records/export` | MU | No | sdk | `export_dns_zone` |
+| CDN/DNS | Import BIND | POST | `/domains/{domain}/dns-records/import` | MU | No | sdk | `import_dns_zone` |
 
 ## CDN — Caching
 
@@ -72,14 +72,16 @@ Per CDN Go SDK HOW-TO: Acceleration, Active Health Check, Aggregated Reports, CD
 
 ## Cloud Server (ECC)
 
-| Service | Operation | HTTP Method | Endpoint | Auth | Destructive | Verified |
-| ------- | --------- | ----------- | -------- | ---- | ----------- | -------- |
-| ECC | List servers | GET | `/regions/{region}/servers` | MU | No | docs |
-| ECC | List images | GET | `/regions/{region}/images` | MU | No | docs |
-| ECC | Create server | POST | `/regions/{region}/servers` | MU | No | docs (mentioned; body schema incomplete in API Usage sample) |
+| Service | Operation | HTTP Method | Endpoint | Auth | Destructive | Verified | MCP tool |
+| ------- | --------- | ----------- | -------- | ---- | ----------- | -------- | -------- |
+| ECC | List servers | GET | `/regions/{region}/servers` | MU | No | docs | `list_servers` |
+| ECC | List images | GET | `/regions/{region}/images` | MU | No | docs | `list_images` |
+| ECC | Get quota | GET | `/regions/{region}/quota` | MU | No | OpenAPI iaas-1.0 | `get_region_quota` |
+| ECC | Create server | POST | `/regions/{region}/servers` | MU | No | docs | `create_server` |
 
 Base: `https://napi.arvancloud.ir/ecc/v1`  
-Example region from docs: `ir-thr-c2`
+Example region from docs: `ir-thr-c2`  
+Note: path is **singular** `/quota` (not `/quotas`).
 
 ## Video Platform (VOD)
 
@@ -92,17 +94,21 @@ Base: `https://napi.arvancloud.ir/vod/2.0` — **deferred in v1 tools**
 
 ## Object Storage
 
-| Service | Operation | HTTP Method | Endpoint | Auth | Destructive | Verified |
-| ------- | --------- | ----------- | -------- | ---- | ----------- | -------- |
-| Object Storage | Get object | GET | S3 path on `*.arvanstorage.ir` | AWS Sig | No | docs |
-| Object Storage | List objects | GET | bucket host | AWS Sig | No | docs |
-| Object Storage | Create bucket | PUT | S3 | AWS Sig | No | docs |
+| Service | Operation | HTTP Method | Endpoint | Auth | Destructive | Verified | MCP |
+| ------- | --------- | ----------- | -------- | ---- | ----------- | -------- | --- |
+| Object Storage | List/create/delete buckets & objects | S3 | `*.arvanstorage.ir` | AWS Sig | varies | docs | S3 named tools |
+| Object Storage | Metrics / list buckets (mgmt) | GET | `storage.arvanapis.ir/v1/...` | MU Apikey | No | docs | `get_bucket_metrics`, `list_storage_api_buckets`, … |
 
-**Deferred in v1** (different credential model).
+## CloudLogs
+
+| Service | Operation | Path / target | MCP |
+| ------- | --------- | ------------- | --- |
+| Ingest | POST entries | `/logging/v1/entries/write` | `write_cloud_logs` |
+| Management | spaces/sinks/forwarders | hosted MCP `mcp.arvancloud.ir` | Bridged tools (see `docs/bridge-official-mcp.md`) |
 
 ## Products discovered without full REST inventory in this pass
 
-From https://docs.arvancloud.ir/en/: Cloud Container, Managed Database, Edge Computing, VPC, Drive, Logs, AI-as-a-Service, Developer Terraform refs. Marked for future modules when official HTTP contracts are inventoried like CDN.
+From https://docs.arvancloud.ir/en/: Managed Database (partial tools), VPC (Terraform / IaaS network paths), Drive, AI-as-a-Service (curated), Developer Terraform refs. See `no-rest-products.md`.
 
 ## Appendix — Offline FA curl extraction (2026-09-13)
 

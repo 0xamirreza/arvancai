@@ -34,3 +34,24 @@ export function toolError(err: unknown) {
 export type ToolContext = {
   client: ArvanCloudClient;
 };
+
+/** Block S3 / non-HTTP writers when ARVANCLOUD_READ_ONLY=1. */
+export function assertWritable(client: { readOnly: boolean }): void {
+  if (client.readOnly) {
+    throw new ArvanCloudError(
+      "read_only",
+      "ARVANCLOUD_READ_ONLY=1 blocks mutating operations. Unset the env to allow writes.",
+    );
+  }
+}
+
+/** Heuristic: bridged official tools that look write-like under read-only mode. */
+export function isLikelyWriteToolName(name: string): boolean {
+  return (
+    /^(create|update|delete|set|write|purge|remove|put|post|patch|deploy|enable|disable|import|add)/i.test(
+      name,
+    ) ||
+    /_(create|update|delete|set|write|purge|remove|put|import|add)$/i.test(name) ||
+    /_(create|update|delete|set|write|purge|remove|import)_/i.test(name)
+  );
+}

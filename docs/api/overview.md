@@ -2,6 +2,16 @@
 
 Primary product documentation: https://docs.arvancloud.ir/en/developer-tools/api/api-usage
 
-CDN OpenAPI-derived endpoint catalog: https://git.arvancloud.ir/arvancloud/cdn-go-sdk/-/blob/main/docs/HOW-TO.md
+OpenAPI specs (preferred over ReDoc HTML): https://www.arvancloud.ir/api-docs/  
+Mirrored under `docs/discovery/openapi/`.
 
-A downloadable OpenAPI JSON/YAML URL was **not found** on docs.arvancloud.ir during discovery (2026-09-13). Contract alignment for CDN paths uses the official SDK HOW-TO plus product curl samples. See `../discovery/` and `../traceability.md`.
+CDN Go SDK HOW-TO (historical path catalog): often referenced alongside OpenAPI for CDN.
+
+Official **hosted MCP** (Logs management + future toolsets):  
+https://docs.arvancloud.ir/fa/developer-tools/mcp/ — bridged by arvancai; see `docs/bridge-official-mcp.md`.
+
+Contract rules for this package:
+
+1. Prefer portal OpenAPI allowlists for `invoke_*_api`.
+2. Named tools must map to verified methods/paths (`docs/traceability.md`).
+3. Do not invent Drive / wallet / unpublished Logs management REST — use panel, Terraform, or the hosted MCP bridge.

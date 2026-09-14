@@ -179,4 +179,66 @@ export function registerDnsTools(server: McpServer, ctx: ToolContext): void {
       }
     },
   );
+
+  server.registerTool(
+    "export_dns_zone",
+    {
+      title: "Export DNS zone",
+      description:
+        "[READ] Export DNS records as a zone file. Official: GET /cdn/4.0/domains/{domain}/dns-records/export",
+      inputSchema: z.object({ domain: DomainNameSchema }),
+      annotations: { readOnlyHint: true, openWorldHint: true },
+    },
+    async ({ domain }) => {
+      try {
+        const data = await ctx.client.cdnRequest<string | unknown>(
+          `domains/${encodeURIComponent(domain)}/dns-records/export`,
+          { method: "GET", idempotent: true, accept: "text" },
+        );
+        return toolResult(
+          typeof data === "string" ? { domain, zone: data } : { domain, data },
+        );
+      } catch (err) {
+        return toolError(err);
+      }
+    },
+  );
+
+  server.registerTool(
+    "import_dns_zone",
+    {
+      title: "Import DNS zone (BIND)",
+      description:
+        "[WRITE] Import a BIND-style zone file via multipart field f_zone_file. Official: POST /cdn/4.0/domains/{domain}/dns-records/import. Confirm with the user before importing — may create many records.",
+      inputSchema: z.object({
+        domain: DomainNameSchema,
+        zone_file: z
+          .string()
+          .min(1)
+          .describe("Full BIND zone file text contents (multipart field name: f_zone_file)"),
+        filename: z
+          .string()
+          .optional()
+          .describe("Optional upload filename, default zone.txt"),
+      }),
+      annotations: { readOnlyHint: false, destructiveHint: false, openWorldHint: true },
+    },
+    async ({ domain, zone_file, filename }) => {
+      try {
+        const form = new FormData();
+        form.append(
+          "f_zone_file",
+          new Blob([zone_file], { type: "text/plain" }),
+          filename?.trim() || "zone.txt",
+        );
+        const data = await ctx.client.cdnRequest(
+          `domains/${encodeURIComponent(domain)}/dns-records/import`,
+          { method: "POST", formData: form },
+        );
+        return toolResult(data);
+      } catch (err) {
+        return toolError(err);
+      }
+    },
+  );
 }

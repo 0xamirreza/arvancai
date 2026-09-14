@@ -5,7 +5,7 @@ These checklist items **cannot** be fully implemented as MCP HTTP tools without 
 | Product | What exists | Why MCP incomplete |
 | ------- | ----------- | ------------------ |
 | آروان‌درایو | Panel/product docs under `fa/drive` | No `napi`/`arvanapis` REST samples or OpenAPI on [FA API portal](https://www.arvancloud.ir/fa/dev/api) |
-| لاگ ابری | Terraform `cloudlogs_*`; **ingestion** via Fluent Bit → `write_cloud_logs` (`POST /logging/v1/entries/write`) | Management OpenAPI still missing; write tool added from Fluent Bit contract |
+| لاگ ابری | Terraform `cloudlogs_*`; **ingestion** via Fluent Bit → `write_cloud_logs` (`POST /logging/v1/entries/write`); **management** via hosted MCP bridge → `mcp.arvancloud.ir` toolset `logs` | Management OpenAPI still missing on portal; bridge re-exports official MCP tools |
 | شبکه ابری خصوصی (VPC) | Terraform `vpc_*`; partial **IaaS** network attach paths | No dedicated VPC OpenAPI card; use `invoke_iaas_v1_api` / `invoke_iaas_v3_api` for documented network ops only |
 | حساب کاربری | IAM / machine-user docs | Auth via `ARVANCLOUD_API_KEY` only — no Accounts management OpenAPI |
 | ابزار توسعه‌دهندگان | Docs hub (CLI/SDK/Terraform) | Meta product — MCP itself is the integration layer; no single “dev tools” REST API |

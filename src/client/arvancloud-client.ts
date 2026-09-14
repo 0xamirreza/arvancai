@@ -9,6 +9,8 @@ export interface RequestOptions {
   /** Absolute URL or path relative to base */
   url: string;
   body?: unknown;
+  /** Multipart body (e.g. DNS zone import). Mutually exclusive with JSON `body`. */
+  formData?: FormData;
   query?: Record<string, string | number | boolean | undefined>;
   /** Extra/override headers (merged after default auth). */
   headers?: Record<string, string>;
@@ -16,6 +18,8 @@ export interface RequestOptions {
   idempotent?: boolean;
   forceRetry?: boolean;
   correlationId?: string;
+  /** Accept plain-text success bodies (e.g. BIND zone export). Default json. */
+  accept?: "json" | "text";
 }
 
 function sleep(ms: number): Promise<void> {
@@ -47,6 +51,10 @@ function parseRetryAfter(header: string | null): number | undefined {
 
 export class ArvanCloudClient {
   constructor(private readonly config: ArvanCloudConfig) {}
+
+  get readOnly(): boolean {
+    return this.config.readOnly;
+  }
 
   get cdnBaseUrl(): string {
     return this.config.cdnBaseUrl;
@@ -202,6 +210,13 @@ export class ArvanCloudClient {
   }
 
   async request<T = unknown>(options: RequestOptions): Promise<T> {
+    if (this.config.readOnly && options.method !== "GET") {
+      throw new ArvanCloudError(
+        "read_only",
+        `ARVANCLOUD_READ_ONLY=1 blocks ${options.method} requests. Unset the env to allow writes.`,
+      );
+    }
+
     const correlationId = options.correlationId ?? crypto.randomUUID();
     const canRetry =
       options.forceRetry === true ||
@@ -220,8 +235,11 @@ export class ArvanCloudClient {
           ...(options.headers ?? {}),
         };
 
-        let body: string | undefined;
-        if (options.body !== undefined) {
+        let body: string | FormData | undefined;
+        if (options.formData) {
+          body = options.formData;
+          delete headers["Content-Type"];
+        } else if (options.body !== undefined) {
           headers["Content-Type"] = "application/json";
           body = JSON.stringify(options.body);
         }
@@ -245,14 +263,22 @@ export class ArvanCloudClient {
         const text = await response.text();
         let parsed: unknown = undefined;
         if (text) {
-          try {
-            parsed = JSON.parse(text);
-          } catch {
-            if (response.ok) {
-              throw new ArvanCloudError("malformed_response", "API returned non-JSON body", {
-                status: response.status,
-                details: { preview: text.slice(0, 200) },
-              });
+          if (options.accept === "text" && response.ok) {
+            parsed = text;
+          } else {
+            try {
+              parsed = JSON.parse(text);
+            } catch {
+              if (response.ok) {
+                if (options.accept === "text") {
+                  parsed = text;
+                } else {
+                  throw new ArvanCloudError("malformed_response", "API returned non-JSON body", {
+                    status: response.status,
+                    details: { preview: text.slice(0, 200) },
+                  });
+                }
+              }
             }
           }
         }

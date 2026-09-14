@@ -12,7 +12,7 @@ import {
   DeleteObjectCommand,
   HeadBucketCommand,
 } from "@aws-sdk/client-s3";
-import { toolError, toolResult } from "./helpers.js";
+import { toolError, toolResult, assertWritable } from "./helpers.js";
 import type { ArvanCloudConfig } from "../client/auth.js";
 
 function requireS3(config: ArvanCloudConfig): S3Client {
@@ -93,6 +93,7 @@ export function registerObjectStorageTools(
     },
     async ({ bucket, acl }) => {
       try {
+        assertWritable({ readOnly: opts.config.readOnly });
         const s3 = requireS3(opts.config);
         const out = await s3.send(
           new CreateBucketCommand({
@@ -137,6 +138,7 @@ export function registerObjectStorageTools(
     },
     async ({ bucket }) => {
       try {
+        assertWritable({ readOnly: opts.config.readOnly });
         const s3 = requireS3(opts.config);
         await s3.send(new DeleteBucketCommand({ Bucket: bucket }));
         return toolResult({ deleted: true, bucket });
@@ -269,6 +271,7 @@ export function registerObjectStorageTools(
     },
     async (args) => {
       try {
+        assertWritable({ readOnly: opts.config.readOnly });
         const s3 = requireS3(opts.config);
         const out = await s3.send(
           new PutObjectCommand({
@@ -299,6 +302,7 @@ export function registerObjectStorageTools(
     },
     async ({ bucket, key }) => {
       try {
+        assertWritable({ readOnly: opts.config.readOnly });
         const s3 = requireS3(opts.config);
         await s3.send(new DeleteObjectCommand({ Bucket: bucket, Key: key }));
         return toolResult({ deleted: true, bucket, key });

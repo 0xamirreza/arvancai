@@ -10,6 +10,8 @@ Discovery date: 2026-09-13 (updated same day with offline FA corpus)
 | Product docs (FA) | https://docs.arvancloud.ir/fa/ | Same official corpus |
 | **Offline FA crawl** | `../arvancloud-docs/fa/` | Local mirror of FA docs — used as primary enrichment source |
 | API Usage (EN/FA) | https://docs.arvancloud.ir/en/developer-tools/api/api-usage · offline `developer-tools/api/api-usage/` | Auth + CDN/ECC/VOD/Object Storage samples |
+| Hosted MCP (FA) | https://docs.arvancloud.ir/fa/developer-tools/mcp/ | Cloud Logs toolset + client setup; bridged by arvancai |
+| OpenAPI files | https://www.arvancloud.ir/api-docs/ · mirrored in `openapi/` | Source of truth for allowlists |
 | Machine User (FA) | offline `accounts/iam/machine-user/` | API Keys + HMAC Keys |
 | CDN Domain / DNS / Caching / HTTPS / Security | offline `cdn/**` | Rich curl bodies |
 | Edge Computing routes | offline `edge-computing/trigger/path/` | `edge-computing/1.0` API |

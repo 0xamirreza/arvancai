@@ -9,6 +9,7 @@ export type ErrorClass =
   | "network"
   | "timeout"
   | "malformed_response"
+  | "read_only"
   | "unknown";
 
 export class ArvanCloudError extends Error {

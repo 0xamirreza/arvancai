@@ -51,11 +51,13 @@ function main(): void {
   }
 
   try {
+    // Factory may be async (official MCP bridge). serveStdio awaits Promise factories.
     serveStdio(() => createServer());
     log("info", "mcp_server_started", {
       server: SERVER_NAME,
       version: SERVER_VERSION,
       transport: "stdio",
+      officialBridge: process.env.ARVANCLOUD_OFFICIAL_MCP !== "0",
     });
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);

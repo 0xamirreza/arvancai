@@ -2,6 +2,7 @@ import { createRequire } from "node:module";
 import { McpServer } from "@modelcontextprotocol/server";
 import { ArvanCloudClient } from "../client/arvancloud-client.js";
 import { loadConfig } from "../client/auth.js";
+import { bridgeOfficialMcp } from "../bridge/official-mcp.js";
 import { registerDomainTools } from "../tools/domains.js";
 import { registerDnsTools } from "../tools/dns.js";
 import { registerCachingTools } from "../tools/caching.js";
@@ -30,7 +31,7 @@ const require = createRequire(import.meta.url);
 const pkg = require("../../package.json") as { version?: string };
 export const SERVER_VERSION = pkg.version ?? "0.0.0";
 
-export function createServer(env: NodeJS.ProcessEnv = process.env): McpServer {
+export async function createServer(env: NodeJS.ProcessEnv = process.env): Promise<McpServer> {
   const config = loadConfig(env);
   const client = new ArvanCloudClient(config);
   const ctx = { client };
@@ -69,6 +70,12 @@ export function createServer(env: NodeJS.ProcessEnv = process.env): McpServer {
   registerOpenApiGatewayTools(server, client);
   registerResources(server, client);
   registerPrompts(server);
+
+  await bridgeOfficialMcp(
+    server,
+    { apiKey: config.apiKey, readOnly: config.readOnly },
+    env,
+  );
 
   return server;
 }
