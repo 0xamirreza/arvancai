@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.2
+
+### Fixes
+- OpenCode setup writes the required local MCP shape (`type: "local"`, `command` array, `enabled`, `environment`) instead of the Cursor-style `command`/`args`/`env` object that made OpenCode reject config
+
 ## 0.6.1
 
 ### Features

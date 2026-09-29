@@ -1,6 +1,6 @@
 {
   "name": "arvancai",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "ArvanCloud MCP server + Agent Skill (arvancai) — local OpenAPI tools + official hosted MCP bridge, Apikey auth, read-only mode",
   "type": "module",
   "bin": {

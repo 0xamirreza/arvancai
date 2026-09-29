@@ -72,15 +72,55 @@ describe("mergeMcpServersFile", () => {
 });
 
 describe("mergeOpenCodeFile", () => {
-  it("writes mcp map", () => {
+  it("writes OpenCode local MCP shape", () => {
     const dir = tempDir();
     const file = path.join(dir, "opencode.json");
     const r = mergeOpenCodeFile(file, "k2");
     expect(["created", "updated"]).toContain(r.action);
     expect(existsSync(file)).toBe(true);
     const doc = JSON.parse(readFileSync(file, "utf8")) as {
-      mcp: { arvancai: { env: { ARVANCLOUD_API_KEY: string } } };
+      $schema?: string;
+      mcp: {
+        arvancai: {
+          type: string;
+          enabled: boolean;
+          command: string[];
+          environment: { ARVANCLOUD_API_KEY: string };
+        };
+      };
     };
-    expect(doc.mcp.arvancai.env.ARVANCLOUD_API_KEY).toBe("k2");
+    expect(doc.$schema).toBe("https://opencode.ai/config.json");
+    expect(doc.mcp.arvancai.type).toBe("local");
+    expect(doc.mcp.arvancai.enabled).toBe(true);
+    expect(Array.isArray(doc.mcp.arvancai.command)).toBe(true);
+    expect(doc.mcp.arvancai.command.length).toBeGreaterThanOrEqual(2);
+    expect(doc.mcp.arvancai.environment.ARVANCLOUD_API_KEY).toBe("k2");
+  });
+
+  it("migrates legacy Cursor-shaped OpenCode entry", () => {
+    const dir = tempDir();
+    const file = path.join(dir, "opencode.json");
+    writeFileSync(
+      file,
+      JSON.stringify({
+        mcp: {
+          arvancai: {
+            command: "old-node",
+            args: ["old-bin"],
+            env: { ARVANCLOUD_API_KEY: "keep-me" },
+          },
+        },
+      }),
+    );
+    const prev = process.env.ARVANCLOUD_API_KEY;
+    delete process.env.ARVANCLOUD_API_KEY;
+    mergeOpenCodeFile(file, "<MU-KEY>");
+    const doc = JSON.parse(readFileSync(file, "utf8")) as {
+      mcp: { arvancai: { type: string; environment: { ARVANCLOUD_API_KEY: string } } };
+    };
+    expect(doc.mcp.arvancai.type).toBe("local");
+    expect(doc.mcp.arvancai.environment.ARVANCLOUD_API_KEY).toBe("keep-me");
+    if (prev === undefined) delete process.env.ARVANCLOUD_API_KEY;
+    else process.env.ARVANCLOUD_API_KEY = prev;
   });
 });

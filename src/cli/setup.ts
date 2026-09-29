@@ -86,19 +86,42 @@ export function mergeMcpServersFile(file: string, apiKey: string): SetupResult {
   }
 }
 
-/** OpenCode uses `{ mcp: { name: {...} } }`. */
+/**
+ * OpenCode MCP local servers:
+ *   { type: "local", command: [node, bin], enabled: true, environment: {...} }
+ * Docs: https://opencode.ai/docs/mcp-servers/
+ */
+export function openCodeMcpEntry(apiKey: string): Record<string, unknown> {
+  const classic = mcpServerEntry(apiKey);
+  const env = (classic.env as Record<string, string>) ?? {};
+  return {
+    type: "local",
+    command: [classic.command as string, ...((classic.args as string[]) ?? [])],
+    enabled: true,
+    environment: env,
+  };
+}
+
+/** OpenCode uses `{ mcp: { name: { type, command[], enabled, environment } } }`. */
 export function mergeOpenCodeFile(file: string, apiKey: string): SetupResult {
   const host = "opencode/" + path.basename(file);
   try {
     const doc = readJson(file);
+    if (!doc.$schema) doc.$schema = "https://opencode.ai/config.json";
     const mcp =
       doc.mcp && typeof doc.mcp === "object" && !Array.isArray(doc.mcp)
         ? ({ ...(doc.mcp as Record<string, unknown>) } as Record<string, unknown>)
         : {};
-    const prev = mcp.arvancai as { env?: { ARVANCLOUD_API_KEY?: string } } | undefined;
-    const key = apiKey !== PLACEHOLDER ? apiKey : resolveApiKey(prev?.env?.ARVANCLOUD_API_KEY);
+    const prev = mcp.arvancai as
+      | {
+          env?: { ARVANCLOUD_API_KEY?: string };
+          environment?: { ARVANCLOUD_API_KEY?: string };
+        }
+      | undefined;
+    const prevKey = prev?.environment?.ARVANCLOUD_API_KEY ?? prev?.env?.ARVANCLOUD_API_KEY;
+    const key = apiKey !== PLACEHOLDER ? apiKey : resolveApiKey(prevKey);
     const existed = Boolean(mcp.arvancai);
-    mcp.arvancai = mcpServerEntry(key);
+    mcp.arvancai = openCodeMcpEntry(key);
     doc.mcp = mcp;
     writeJson(file, doc);
     return { host, path: file, action: existed ? "updated" : "created" };
