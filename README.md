@@ -12,7 +12,7 @@ npm install -g arvancai
 
 **Repository:** https://github.com/0xamirreza/arvancai  
 **npm:** https://www.npmjs.com/package/arvancai  
-**Version:** 0.6.1
+**Version:** 0.6.2
 
 Requires **Node.js ≥ 20** and an ArvanCloud **Machine User** API key:  
 https://docs.arvancloud.ir/en/accounts/iam/machine-user
